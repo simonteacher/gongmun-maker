@@ -296,6 +296,9 @@ textarea.txt{resize:vertical;line-height:1.6;min-height:160px}
         <tr><td>날짜</td><td>연·월·일 글자 대신 마침표, 요일은 괄호</td><td><code>2026.∨10.∨28.(수)</code></td></tr>
         <tr><td>시간</td><td>24시각제, 시·분 글자 대신 쌍점</td><td><code>15:30~17:30</code></td></tr>
         <tr><td>물결표</td><td>앞뒤 말에 붙여 씀</td><td><code>2026.∨4.∨1.~4.∨30.</code></td></tr>
+        <tr><td>가운뎃점</td><td>나열하는 말 사이</td><td><code>체육·예술과, AI·SW, 1·2학년</code></td></tr>
+        <tr><td>띄어쓰기</td><td>'외'와 수, 보조용언</td><td><code>이○우∨외∨8명, 협조하여∨주시기</code></td></tr>
+        <tr><td>관련 문서 제목</td><td>번호(날짜) 뒤 「 」로 묶음</td><td><code>○○과-5766(2026.∨10.∨26.)호∨「○○ 계획」.</code></td></tr>
         <tr><td>쌍점</td><td>앞말에 붙이고 뒷말과 1타 띄움</td><td><code>장소:∨본교∨시청각실</code></td></tr>
         <tr><td>금액</td><td>숫자 뒤 괄호 안에 한글로 함께 적음</td><td><code>금217,800원(금이십일만칠천팔백원)</code></td></tr>
         <tr><td>붙임</td><td>본문 끝에서 한 줄 띄우고 '붙임∨∨'. 첨부가 여럿이면 번호를 붙이고 둘째 줄부터 첫째 번호와 줄을 맞춤</td><td><code>붙임∨∨1.∨추진∨계획∨1부.<br><span id="attPad">∨∨∨∨∨∨∨∨∨</span>2.∨명단∨1부.∨∨끝.</code></td></tr>
@@ -382,7 +385,7 @@ const MODE={
 };
 const EXAMPLE={
   general:{title:"2026학년도 교직원 심폐소생술 연수 실시 안내",memo:"교직원의 응급처치 및 안전 역량 강화를 위해 심폐소생술 등 응급처치 교육을 실시하오니 전 교직원은 참석 바람.\n관련: 광주경신여자고등학교-1025(2026.3.2)\n일시: 2026년 4월 15일 수요일 15시 30분 ~ 17시 30분\n장소: 본교 시청각실\n대상: 전 교직원\n교육 내용:\n- 이론 교육(40분): 응급처치의 목적 및 필요성, 심폐소생술 원리 교육\n- 실습 교육(80분): 심폐소생술 모의 실습 및 자동심장충격기(AED) 사용법\n준비물: 실습을 위한 간편한 복장\n붙임: 2026학년도 교직원 심폐소생술 연수 추진 계획 1부, 연수 참석자 명단 서식 1부"},
-  expense:{title:"2026학년도 과학 동아리 실험 물품 구입",memo:"2026학년도 과학 동아리 운영에 필요한 실험 물품을 구입하고자 함.\n관련: 광주경신여자고등학교-4641(2026.4.6)\n구입품목: 비커 세트 외 12종\n구입예산: 217,800원\n구매처: 학교장터(S2B)\n붙임: 지출품의서 1부, 견적서 1부"}
+  expense:{title:"2026학년도 고교학점제 교과별 물품 구입",memo:"2026학년도 고교학점제 운영을 위한 교과별 물품 구입비를 지출하고자 함.\n관련: 광주경신여자고등학교-4011(2026.4.3)\n내 용: 고교학점제 교과별 운영 내실화\n대 상: 체육.예술과, 생활.교양과\n구매품목:\n- 체육.예술과: 배드민턴 라켓 손잡이 밴드 외 6종\n- 생활.교양과: 오마모리만들기 외 2종\n총 금 액: 500100원\n붙임: 지출품의서 1부, 견적서 1부"}
 };
 function setMode(m,silent){mode=m;const M=MODE[m];
   document.querySelectorAll(".seg button").forEach(b=>{const on=b.dataset.m===m;b.classList.toggle("on",on);b.setAttribute("aria-checked",String(on));});
@@ -398,7 +401,7 @@ function normInline(t){ // 날짜·시간·물결표·쌍점 정리 (한 줄)
   return t
    .replace(/(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일(?:\s*\(?([월화수목금토일])요일\)?)?/g,(m,y,mo,d,w)=>fmtDateParts(y,mo,d,w))
    .replace(/\b(\d{4})\s*[-/]\s*(\d{1,2})\s*[-/]\s*(\d{1,2})\b\.?/g,(m,y,mo,d)=>fmtDateParts(y,mo,d))
-   .replace(/\b(\d{4})\.\s?(\d{1,2})\.\s?(\d{1,2})(?![\d.])/g,(m,y,mo,d)=>fmtDateParts(y,mo,d))
+   .replace(DATE_DOT,(m,y,mo,d)=>fmtDateParts(y,mo,d))
    .replace(/\(([월화수목금토일])요일\)/g,"($1)")
    .replace(/(오전|오후)?\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?\s*[~∼\-–]\s*(오전|오후)?\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?/g,(m,a1,h1,m1,a2,h2,m2)=>{let x=to24(a1||"",h1),y=to24(a2||a1||"",h2);if(!a2&&a1==="오후"&&y<x)y+=12;const f=(h,mi)=>`${String(h%24).padStart(2,"0")}:${String(mi||0).padStart(2,"0")}`;return (m.match(/^\s*/)[0])+f(x,m1)+"~"+f(y,m2);})
    .replace(/(오전|오후)\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?/g,(m,a,h,mi)=>`${String(to24(a,h)).padStart(2,"0")}:${String(mi||0).padStart(2,"0")}`)
@@ -406,7 +409,27 @@ function normInline(t){ // 날짜·시간·물결표·쌍점 정리 (한 줄)
    .replace(/\b(\d):(\d{2})\b/g,"0$1:$2")
    .replace(/(\d{2}:\d{2})\s*[-–]\s*(\d{1,2}:\d{2})/g,"$1~$2")
    .replace(/\s*[~∼]\s*/g,"~")
-   .replace(/(?<=[^\d\s]) +:/g,":").replace(/(?<=[가-힣a-zA-Z)]):(?=[^\s\d/])/g,": ");
+   .replace(/(?<=[^\d\s]) +:/g,":").replace(/(?<=[가-힣a-zA-Z)]):(?=[^\s\d/])/g,": ")
+   .replace(/^[\s\S]*$/,wordFixAll);
+}
+// 날짜: 2026.10.29. / 2026. 10.29 / 2026.11. 2. → 2026. 10. 29.
+const DATE_DOT=/(?<![\d.])(\d{4})\.[ \t]*(\d{1,2})\.[ \t]*(\d{1,2})(?!\d)\.?/g;
+// 낱말 교정: 가운뎃점, '외 8명', '1·2학년', '협조하여 주시기'
+const WORD_RULES=[ // [정규식, 고친 글자(m) → 문자열|null]
+  [/(?<=[가-힣])([가-힣])\.(?=[가-힣])/g, m=>/[다요]$/.test(m[1])?null:m[1]+"·"],
+  [/\b([A-Z]{1,5})\.(?=[A-Z]{1,5}\b)/g, m=>m[1]+"·"],
+  [/외(\d+)(?=\s*(?:명|종|개|건|곳|인|팀|부|점|식|권))/g, m=>"외 "+m[1]],
+  [/(?<![\d,])(\d)[ \t]*,[ \t]*(\d)(?=[ \t]*학년)/g, m=>m[1]+"·"+m[2]],
+  [/(협조|참석|제출|회신|확인|참여|신청|안내|지도|협력|검토|조치|통보|배부|홍보|공지)(?:해|하여)[ \t]*주(?=시기|십시오|시고|시길)/g, m=>m[1]+"하여 주"],
+  [/([가-힣])해주(?=시기|십시오)/g, m=>m[1]+"해 주"]];
+function wordFixAll(x){for(const [re,f] of WORD_RULES)x=x.replace(re,(...a)=>{const m=a.slice(0,-2);if(typeof m[m.length-1]==="number")m.pop();const r=f(m);return r==null?m[0]:r;});return x;}
+function fmtRelFull(t){ // 번호(날짜) 뒤에 문서 제목이 붙은 경우: …(2026. 10. 26.)호 「제목」.
+  t=clean(t).replace(/^관련\s*[:：]?\s*/,"");
+  const m=t.match(/^(.*?\(\s*\d{4}[^)]*\))\s*(?:호(?![가-힣]))?\s*\.?\s*(.+)$/);
+  if(!m||!/[가-힣A-Za-z]/.test(m[2])||/^호\s*\.?$/.test(m[2]))return fmtRel(t);
+  let title=normInline(m[2]).replace(/[.。]+$/,"").replace(/\s*호$/,"");
+  if(!/^[「『"'“‘<《]/.test(title))title=`「${title}」`;
+  return fmtRel(m[1]).replace(/(호)?\.$/,OPT.ho?"호":"")+" "+title+".";
 }
 function fmtRel(t){ // "광주경신여자고등학교-1025(2026.3.2)" → "…-1025(2026. 3. 2.)호."
   t=clean(t).replace(/^관련\s*[:：]?\s*/,"").replace(/[.。]+$/,"").replace(/\s*호$/,"");
@@ -441,10 +464,15 @@ function outlineFromTitle(title,m){
   const D=`${Y}. ○. ○.(○)`,DT=`${D} ○○:○○~○○:○○`,has=re=>re.test(t);
   const core=(titleCore(t)||t).replace(/(\s*(공고|계획|알림|안내|개최|실시|운영|추진|시행|진행))+$/,"")||t;
   const L=[];const sent=x=>L.push(x),kv=(k,v)=>L.push(`${k}: ${v}`),sub=a=>a.forEach(x=>L.push("- "+x)),att=a=>L.push("붙임: "+a.map(x=>x+" 1부").join(", "));
-  if(m==="expense"||has(/구입|구매|지출|물품|기자재|비품|교구/)){
-    const g=core.replace(/\s*(구입|구매)(\s*품의)?$/,"");
-    sent(`${eul(g||"물품")} 다음과 같이 구입하고자 함.`);
-    kv("구입품목",`${BL} 외 ○종`);kv("구입예산","○○○,○○○원");kv("구매처",`학교장터(S2B)`);att(["지출품의서","견적서"]);
+  if(m==="expense"||has(/구입|구매|지출|물품|기자재|비품|교구|간식비|식비|운영비/)){
+    sent(expSent(t,true,true));
+    if(has(/간식|식비|다과|음료|식대|회의비|협의회비|간담회/)){
+      kv("품 명",BL);kv("구 입 처",BL);kv("일 시",`${D} ○○:○○`);kv("장 소",BL);kv("내 용",BL);kv("참 석 자",`${BL} ○명`);kv("총 액","○○,○○○원");
+    }else if(has(/물품|구입|구매|교구|기자재|비품|재료|소모품|도서/)){
+      kv("내 용",BL);kv("대 상",BL);kv("구매품목","");sub([`${BL}: ${BL} 외 ○종`]);kv("구 매 처","학교장터(S2B)");kv("총 금 액","○○○,○○○원");att(["지출품의서","견적서"]);
+    }else{
+      kv(has(/캠프|대회|축제|행사|체험|실시|개최|한마당|발표회|공연/)?"행 사 명":"사 업 명",core);kv("일 시",DT);kv("장 소",BL);kv("대 상",`${BL} ○명`);kv("총 액","○○○,○○○원");att(["참가 명단","견적서"]);
+    }
   }else if(has(/결과/)){
     sent(`${core.replace(/\s*결과(\s*보고)?$/,"")} 결과를 다음과 같이 보고함.`);
     kv("기간",`${D}~○. ○.(○)`);kv("대상",BL);kv("주요 결과","");sub([BL,BL]);att(["결과 보고서"]);
@@ -513,33 +541,42 @@ function parseMemo(memo){
 const KO="가나다라마바사아자차카타파하거너더러머버서어저처커터퍼허고노도로모보소오조초코토포호구누두루무부수우주추쿠투푸후";
 const KOC="["+KO+"]";
 function moneyVal(v){const m=String(v).match(/(\d[\d,]*)\s*원/);return m?+m[1].replace(/,/g,""):NaN;}
+const MONEY_RES=[/((?:총\s*금?\s*액|소요\s*예\s*산|구입\s*예\s*산|예\s*산|합\s*계|금\s*액|사\s*업\s*비)\s*:\s*)(금\s*)?(\d[\d,]*)\s*원(?!\s*\()/g,
+  /((?<![가-힣])[가-힣]{1,8}비(?:\s*등)?\s*:?\s+)(금\s*)?(\d{1,3}(?:,\d{3})+|\d{5,})\s*원(?!\s*\()/g,
+  /(=\s*)(금\s*)?(\d[\d,]*)\s*원(?!\s*\()/g];
 function fmtValue(key,v){
   v=normInline(clean(String(v).replace(/\p{Extended_Pictographic}\uFE0F?/gu,"")));
-  if(/예산|총액|금액|사업비|소요액|합계|경비/.test(key)&&!/\(금/.test(v)){const n=moneyVal(v)||+String(v).replace(/[^\d]/g,"");if(n)v=v.replace(/금?\s*\d[\d,]*\s*원?/,wonH(n));}
+  if(/예산|총액|금액|사업비|소요액|합계|경비|비$/.test(String(key||"").replace(/\s/g,""))&&!/\(금/.test(v)){const n=moneyVal(v)||+String(v).replace(/[^\d]/g,"");if(n)v=v.replace(/금?\s*\d[\d,]*\s*원?/,wonH(n));}
   return v;
 }
+// 지출품의 첫 문장: 경신여고에서 쓰는 "…비를 지출하고자 합니다." 꼴
+function expSent(title,hasItems,memoStyle){
+  let c=clean(title).replace(/\s*(지출\s*품의|지출\s*요청|지출|품의)$/,"")||"물품 구입";
+  let obj;
+  if(/(비|료|대|경비|금)$/.test(c))obj=c;
+  else if(/(구입|구매)$/.test(c))obj=c.replace(/\s*(구입|구매)$/,"")+" 구입비";
+  else if(/(실시|개최)$/.test(c))obj=c+"에 따른 운영비";
+  else if(/운영$/.test(c))obj=c+"비";
+  else obj=c+" 운영비";
+  return `${eul(obj)} ${hasItems?"다음과 같이 ":""}지출하고자 ${memoStyle?"함":"합니다"}.`;
+}
+// 이미 완성된 공문을 메모 칸에 붙여 넣었는지
+function looksLikeDoc(x){const L=String(x||"").split("\n").map(l=>l.replace(/[\u00a0\u3000]/g," ").trim()).filter(Boolean);
+  const n1=L.filter(l=>/^\d{1,2}\.\s?\S/.test(l)&&!/^\d{4}\./.test(l)).length,k1=L.filter(l=>new RegExp("^"+KOC+"\\.\\s?\\S").test(l)).length;
+  return (n1>=1&&k1>=1)||(/끝\.\s*$/.test(L[L.length-1]||"")&&n1>=1);}
 function buildDraft(title,memo){
+  if(looksLikeDoc(memo))return tidyDoc(memo);
   const P=parseMemo(memo);const out=[];let n=1;
-  if(clean(P.rel)){out.push(`${n}. 관련: ${fmtRel(P.rel)}`);n++;}
+  if(clean(P.rel)){out.push(`${n}. 관련: ${fmtRelFull(P.rel)}`);n++;}
   if(!P.sent.length&&P.items.length&&!P.items[0].key&&!P.items[0].children.length&&/(다|함|바람|요망|임|됨)\.?$/.test(P.items[0].val))P.sent.push(P.items.shift().val);
   const nounVerb=t=>{const m=clean(t).replace(/[.。]$/,"").match(/^(.+?)\s*(개최|실시|운영|추진|안내|구입|구매|모집|시행|진행|점검|조사|신청)$/);
     return m?`${eul(m[1])} ${P.items.length?"다음과 같이 ":""}${m[2]}하고자 합니다.`:null;};
   let sent=P.sent.map(t=>nounVerb(t)||formalize(t)).join(" ");
   if(mode==="expense"){
-    const items=P.items.slice();
-    const take=re=>{const i=items.findIndex(x=>re.test(x.key));return i>=0?items.splice(i,1)[0]:null;};
-    const goods=take(/^(구입\s*품목|구매\s*품목|품목|품명|물품|구입\s*물품)$/),budget=take(/(예산|총액|금액|사업비)$/),shop=take(/^(구매처|구입처|구 매 처|구 입 처|업체|구매\s*업체)$/),purpose=take(/^(목적|사업\s*목적|사업명|구입\s*목적)$/);
-    if(!sent){const core=clean(title)||"물품";sent=purpose?`${eul(purpose.val)} 위하여 다음과 같이 물품을 구입하고자 합니다.`:`${eul(core.replace(/\s*(구입|구매)$/,""))} 다음과 같이 구입하고자 합니다.`;}
-    else sent=addDaum(sent);
+    if(!sent)sent=expSent(title,P.items.length>0,false);
+    else if(P.items.length)sent=addDaum(sent);
     out.push(`${n}. ${sent}`);
-    const subs=[];
-    if(goods)subs.push(`구입품목: ${fmtValue("품목",goods.val)}`);
-    if(budget)subs.push(`구입예산: ${fmtValue("예산",budget.val)}`);
-    if(shop)subs.push(`구 매 처: ${fmtValue("구매처",shop.val)}`);
-    const rest=items.map(x=>({...x}));
-    let k=0;
-    if(subs.length){out.push(`  ${KO[k++]}. 내용`);subs.forEach((s,i)=>out.push(`    ${i+1}) ${s}`));}
-    rest.forEach(x=>{pushItem(out,x,KO[k++]);});
+    P.items.forEach((x,i)=>pushItem(out,x,KO[i]));
   }else{
     if(!sent){const core=titleCore(title);sent=core?`${eul(core)} 다음과 같이 ${/안내|알림|공지/.test(title)?"안내합니다":"실시하고자 합니다"}.`:"다음과 같이 알려 드립니다.";}
     else if(P.items.length)sent=addDaum(sent);
@@ -575,22 +612,30 @@ function tidyDoc(x){
   // 본문: 줄마다 기호 수준 판정 후 번호 다시 매기기
   const counters=[0,0,0,0,0,0];const outB=[];let prevBlank=false;
   body=body.map(l=>l.replace(/\s*끝\.?\s*$/,"")).filter((l,i,a)=>!(i===a.length-1&&!l.trim()));
-  for(const l of body){
+  for(const l0 of body){
+    const l=l0.replace(/[\u00a0\u3000\u2002-\u200b]/g," ");
     const t=l.trim();if(!t){prevBlank=true;continue;}
-    const hit=LV.find(([re])=>re.test(t));
+    let hit=LV.find(([re])=>re.test(t));
+    // "다." 처럼 줄바꿈으로 잘려 내려온 글자는 기호가 아니라 앞 줄의 끝
+    if(hit&&!t.replace(hit[0],"").trim()&&outB.length&&!prevBlank&&!/[.:]$/.test(outB[outB.length-1].trim())){outB[outB.length-1]+=t;continue;}
     if(hit){const [re,lv,type]=hit;const rest=t.replace(re,"").trim();counters[lv]++;for(let j=lv+1;j<counters.length;j++)counters[j]=0;
       outB.push(" ".repeat(lv*2)+symOf(type,counters[lv]-1)+" "+normInline(rest));}
     else{ // 기호 없는 줄: 바로 위 항목의 연속 문장으로 붙이거나 그대로
       const lead=(l.match(/^\s*/)[0]).length;
-      if(outB.length&&!prevBlank&&lead===0&&!/[.:)]$/.test(outB[outB.length-1].trim())&&!/^\S+\s*:/.test(t))outB[outB.length-1]+=" "+normInline(t);
+      const pv=outB.length?outB[outB.length-1]:"";
+      if(outB.length&&!prevBlank&&lead===0&&!/[.:)]$/.test(pv.trim())&&!/^\S+\s*:/.test(t)){
+        const pBody=pv.trim().replace(/^(\d{1,2}\.|[가-힣]\.|\d{1,2}\)|[가-힣]\)|\(\S{1,2}\))\s*/,"");
+        if(pv.trim().length>=30)outB[outB.length-1]=normInline(pv+(/^[가-힣](?=$|[\s.,)·」』'"(])/.test(t)?"":" ")+t);  // 화면 폭에서 잘린 줄 → 다시 이어 붙임
+        else if(/^[^:]{1,15}:\s/.test(pBody))outB[outB.length-1]+=", "+normInline(t);  // '해당학생: A' 다음 줄 'B' → 'A, B'
+        else outB[outB.length-1]+=" "+normInline(t);}
       else outB.push((lead?" ".repeat(Math.round(lead/2)*2):"")+normInline(t));
     }
     prevBlank=false;
   }
   // 관련 '호.'
-  for(let i=0;i<outB.length;i++){const m=outB[i].match(/^(\s*\d{1,2}\.\s)관련\s*[:：]\s*(.+)$/);if(m)outB[i]=m[1]+"관련: "+fmtRel(m[2]);}
+  for(let i=0;i<outB.length;i++){const m=outB[i].match(/^(\s*\d{1,2}\.\s)관련\s*[:：]\s*(.+)$/);if(m)outB[i]=m[1]+"관련: "+fmtRelFull(m[2]);}
   // 금액 한글 병기
-  for(let i=0;i<outB.length;i++)outB[i]=outB[i].replace(/((?:총\s*액|총\s*금액|소요\s*예산|구입\s*예산|예산|합\s*계|금\s*액|사업비)\s*:\s*)(금\s*)?(\d[\d,]*)\s*원(?!\s*\()/g,(m,p,g,n)=>p+wonH(+n.replace(/,/g,"")));
+  for(let i=0;i<outB.length;i++)MONEY_RES.forEach(re=>{outB[i]=outB[i].replace(new RegExp(re.source,"g"),(m,p,g,n)=>{const v=+n.replace(/,/g,"");return v?p+wonH(v):m;});});
   let out=outB.join("\n").replace(/\s+$/,"");
   att=att.flatMap(a=>a.split(/\s*[,，]\s*/)).map(a=>clean(a).replace(/^\d{1,2}\.\s*/,"").replace(/\s*끝\.?\s*$/,"").replace(/[.。]+$/,"")).filter(Boolean).map(a=>/\d+\s*(부|매|장|권|식|건|개|철|점|종)$/.test(a)?a:a+" 1부");
   if(!att.length)out=out.replace(/([^.)\s])$/,"$1.").replace(/\)$/,").");
@@ -605,7 +650,7 @@ const RULES=[
  {id:"date",name:"날짜 표기",why:"연·월·일 글자 대신 마침표를 찍어요 (2026. 10. 28.)",find:x=>[
    ...allMatches(/(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일(?:\s*\(?([월화수목금토일])요일\)?)?/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:fmtDateParts(m[1],m[2],m[3],m[4])})),
    ...allMatches(/\b(\d{4})\s*[-/]\s*(\d{1,2})\s*[-/]\s*(\d{1,2})\b\.?/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:fmtDateParts(m[1],m[2],m[3])})),
-   ...allMatches(/\b(\d{4})\.\s?(\d{1,2})\.\s?(\d{1,2})(?![\d.])/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:fmtDateParts(m[1],m[2],m[3])})),
+   ...allMatches(DATE_DOT,x,m=>({s:m.index,e:m.index+m[0].length,fix:fmtDateParts(m[1],m[2],m[3])})),
    ...allMatches(/\(([월화수목금토일])요일\)/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:`(${m[1]})`}))]},
  {id:"time",name:"시간 표기",why:"24시각제로 시·분 글자 없이 쌍점을 써요 (15:30)",find:x=>[
    ...allMatches(/(오전|오후)?\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?\s*[~∼\-–]\s*(오전|오후)?\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?/g,x,m=>{const st=m.index+(m[0].length-m[0].trimStart().length);return {s:st,e:m.index+m[0].length,fix:normInline(m[0]).trim()};}),
@@ -613,15 +658,14 @@ const RULES=[
    ...allMatches(/(오전|오후)\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:normInline(m[0])})),
    ...allMatches(/(?<![오전후]\s?)(\d{1,2})\s*시\s*(\d{1,2})\s*분/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:`${m[1].padStart(2,"0")}:${m[2].padStart(2,"0")}`})),
    ...allMatches(/(?<![오전후\d]\s?)(\d{1,2})\s*시(?=$|[\s~∼\-–)\],.]|부터|까지|에|경|정각)(?!\s*\d{1,2}\s*분)/gm,x,m=>({s:m.index,e:m.index+m[0].length,fix:`${m[1].padStart(2,"0")}:00`}))]},
+ {id:"word",name:"가운뎃점·띄어쓰기",why:"나열은 가운뎃점(체육·예술과), '외 8명', '협조하여 주시기'처럼 써요",find:x=>WORD_RULES.flatMap(([re,f])=>allMatches(new RegExp(re.source,"g"),x,m=>{const r=f(m);return r==null||r===m[0]?null:{s:m.index,e:m.index+m[0].length,fix:r};}))},
  {id:"tilde",name:"물결표",why:"물결표(~)는 앞뒤 말에 붙여 써요",find:x=>allMatches(/[ \t]+[~∼][ \t]*|[ \t]*[~∼][ \t]+|∼/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:"~"}))},
  {id:"colon",name:"쌍점",why:"쌍점(:)은 앞말에 붙이고 뒷말과 한 칸 띄워요",find:x=>[
    ...allMatches(/(?<=[^\d\s]) +:/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:":"})),
    ...allMatches(/(?<=[가-힣a-zA-Z)]):(?=[^\s\d/])/g,x,m=>({s:m.index,e:m.index+1,fix:": "}))]},
- {id:"rel",name:"관련 문서",why:"관련 문서는 번호(날짜) 뒤에 '호.'로 맺어요",find:x=>OPT.ho?allMatches(/^(\s*\d{1,2}\.\s*관련\s*:\s*)([^\n]*?)\s*(호\s*\.?|\.)?[ \t]*$/gm,x,m=>{if(/호\.$/.test(m[0].trim()))return null;const st=m.index+m[1].length;return {s:st,e:m.index+m[0].length,fix:fmtRel(m[2])};}):[]},
+ {id:"rel",name:"관련 문서",why:"관련 문서는 번호(날짜) 뒤에 '호.'로 맺어요",find:x=>OPT.ho?allMatches(/^(\s*\d{1,2}\.\s*관련\s*:\s*)([^\n]*?)\s*(호\s*\.?|\.)?[ \t]*$/gm,x,m=>{const nx=(x.slice(m.index+m[0].length+1).split("\n")[0]||"").replace(/[\u00a0\u3000]/g," ").trim();if(nx&&!/^(\d{1,2}[.)]|[가-힣][.)]|\(|붙\s*임)/.test(nx))return null;const st=m.index+m[1].length,cur=x.slice(st,m.index+m[0].length),f=fmtRelFull(cur);if(cur===f||(/호\.$/.test(cur)&&!/[「『"'“]/.test(f)&&cur.replace(/\s/g,"")===f.replace(/\s/g,"")))return null;return {s:st,e:m.index+m[0].length,fix:f};}):[]},
  {id:"gap12",name:"빈 줄",why:"1과 2 사이처럼 항목 사이에는 빈 줄을 두지 않아요",find:x=>allMatches(/(?<=^\s*\d{1,2}\.[^\n]*)\n(?:[ \t]*\n)+(?=[ \t]*(?:\d{1,2}\.|[가-힣]\.|\d{1,2}\))\s)/gm,x,m=>({s:m.index,e:m.index+m[0].length,fix:"\n"}))},
- {id:"money",name:"금액 표기",why:"금액은 숫자 뒤 괄호 안에 한글로 함께 적어요",find:x=>[
-   ...allMatches(/((?:총\s*액|총\s*금액|소요\s*예산|구입\s*예산|예산|합\s*계|금\s*액|사업비)\s*:\s*)(금\s*)?(\d[\d,]*)\s*원(?!\s*\()/g,x,m=>{const v=+m[3].replace(/,/g,"");if(!v)return null;return {s:m.index+m[1].length,e:m.index+m[0].length,fix:wonH(v)};}),
-   ...allMatches(/(=\s*)(금\s*)?(\d[\d,]*)\s*원(?!\s*\()/g,x,m=>{const v=+m[3].replace(/,/g,"");if(!v)return null;return {s:m.index+m[1].length,e:m.index+m[0].length,fix:wonH(v)};})]},
+ {id:"money",name:"금액 표기",why:"금액은 숫자 뒤 괄호 안에 한글로 함께 적어요",find:x=>{const seen=new Set();return MONEY_RES.flatMap(re=>allMatches(new RegExp(re.source,"g"),x,m=>{const v=+m[3].replace(/,/g,"");const s0=m.index+m[1].length;if(!v||seen.has(s0))return null;seen.add(s0);return {s:s0,e:m.index+m[0].length,fix:wonH(v)};}));}},
  {id:"sym",name:"항목 기호 띄어쓰기",why:"항목 기호 다음은 한 칸(1타) 띄워요",find:x=>allMatches(/^([ \t]*)(\d{1,2}\.|[가-힣]\.|\d{1,2}\)|[가-힣]\)|\(\d{1,2}\)|\([가-힣]\))(?=[^\s\d.])/gm,x,m=>{const p=m.index+m[1].length+m[2].length;return {s:p,e:p,fix:" "};})},
  {id:"indent",name:"들여쓰기",why:"하위 항목은 상위 항목보다 2타 들여 써요 (가. 2타 / 1) 4타)",find:x=>{
    const out=[];let off=0,hasTop=false,inAtt=false;
@@ -724,6 +768,11 @@ $("#genBtn").onclick=async()=>{
   try{await genInner(title,memo,u);}finally{busy(false);}
 };
 async function genInner(title,memo,u){
+  if(looksLikeDoc(memo)){
+    await sleep(650);const before=lintIssues(memo.replace(/[\u00a0\u3000]/g," ")).length;
+    $("#docTitle").value=title;setBody(fixAll(tidyDoc(memo)),null,null);
+    chat("bot",`붙여 넣은 공문을 규정에 맞게 고쳤어요${before?` (교정 ${before}곳)`:""}. 날짜·시간·물결표·쌍점·가운뎃점·금액 한글 병기·관련 '호.'·항목 들여쓰기·붙임 줄 맞춤·'  끝.'을 정리했어요. 원래 문장은 그대로 두었어요.`);
+    toast("공문을 규정대로 고쳤어요",u);return;}
   if(aiOn()){
     chat("me",`[초안 만들기] ${MODE[mode].tag} · ${title||"(제목 없음)"}`);
     const w=chat("bot","AI가 공문 규정에 맞춰 초안을 쓰는 중이에요…","wait");
@@ -841,9 +890,10 @@ K-에듀파인 기안문 '본문'만 씁니다(수신·발신 명의 제외). �
 - 관련 문서가 있으면 "1. 관련: 기관명-번호(2026. 3. 2.)${OPT.ho?"호.":"."}" 형식으로 첫 항목에 둠. 1과 2 사이에 빈 줄 없음.
 - 날짜 "2026. 4. 15.(수)", 시간 "15:30~17:30"(24시각제, 물결표 붙여 씀), 쌍점은 앞말에 붙이고 뒤는 한 칸 띄움.
 - 금액은 "금217,800원(금이십일만칠천팔백원)"처럼 한글 병기.
+- 나열은 가운뎃점(체육·예술과, AI·SW, 1·2학년), "외 8명", "협조하여 주시기 바랍니다", 날짜는 2026. 10. 29.처럼 띄움. 관련 문서 뒤 제목은 「 」로 묶음.
 - 문장은 공문 어투(~하고자 합니다, ~하여 주시기 바랍니다). 사실(날짜·금액·장소·인원)은 바꾸거나 지어내지 말 것.
 - 붙임은 본문 끝에서 한 줄 띄우고 "붙임  1. ○○ 1부." 형식, 둘째 줄부터 공백 ${OPT.pad}칸 뒤 "2. ○○ 1부.", 마지막에 공백 2칸 + "끝.". 붙임이 없으면 본문 마지막 문장 뒤 공백 2칸 + "끝.".
-${mode==="expense"?'- 지출품의: "2. ○○을 다음과 같이 구입하고자 합니다." 다음 "  가. 내용" 아래 "    1) 구입품목: ○○ 외 ○종", "    2) 구입예산: 금…원(금…원)", "    3) 구 매 처: ○○". 붙임에 지출품의서·견적서.':'- 일반 공문: 목적·취지 문장 뒤 "다음과 같이 …"로 가. 나. 항목(일시, 장소, 대상, 내용 등)을 정리.'}
+${mode==="expense"?'- 지출품의(우리 학교 양식): "2. ○○ 운영을 위한 ○○비를 다음과 같이 지출하고자 합니다." 다음 "  가. 내 용: …", "  나. 대 상: …", "  다. 구매품목:" 아래 "    1) ○○과: ○○ 외 ○종", "  라. 총 금 액: 금500,100원(금오십만일백원)"처럼 가. 나. 항목으로 정리. 간식·협의회비는 품 명, 구 입 처, 일 시, 장 소, 내 용, 참 석 자, 총 액 순. 메모의 항목 이름(띄어 쓴 \'내 용\' 등)은 그대로 둠.':'- 일반 공문: 목적·취지 문장 뒤 "다음과 같이 …"로 가. 나. 항목(일시, 장소, 대상, 내용 등)을 정리.'}
 JSON으로만 답하세요: {"title":"제목","body":"본문 전체(줄바꿈은 \\n)","note":"사용자에게 한 줄 설명"}`;
 async function aiCall(prompt){
   const c=aiCfg();const body={contents:[{role:"user",parts:[{text:prompt}]}],generationConfig:{responseMimeType:"application/json"}};
