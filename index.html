@@ -16,7 +16,7 @@
   --docfont:"Batang","바탕","BatangChe","Noto Serif KR","Nanum Myeongjo",serif;
 }
 *{box-sizing:border-box}
-html{scroll-padding-top:72px}
+html{scroll-padding-top:120px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕","Noto Sans KR",system-ui,sans-serif;font-size:14px;line-height:1.55;letter-spacing:-.01em}
 button,input,select,textarea{font:inherit;color:inherit;letter-spacing:inherit}
 :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
@@ -189,6 +189,53 @@ textarea.txt{resize:vertical;line-height:1.6;min-height:160px}
 .toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 .toast button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:6px;height:28px;padding:0 10px;cursor:pointer;font-weight:700;font-size:12.5px}
 .toast:not(.act) button{display:none}
+
+/* ---- 탭 ---- */
+.tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:56px;z-index:15}
+.tabs-in{max-width:1400px;margin:0 auto;padding:0 22px;display:flex;gap:4px}
+.tab{appearance:none;background:none;border:0;border-bottom:3px solid transparent;padding:11px 14px 9px;font:inherit;font-size:14px;font-weight:700;color:var(--ink-3);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.tab svg{width:16px;height:16px}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--blue);border-bottom-color:var(--blue)}
+[hidden]{display:none!important}
+/* ---- 가이드 ---- */
+.guide{max-width:1100px;margin:0 auto;padding:22px 22px 70px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:start}
+.gtoc{position:sticky;top:calc(var(--stick,110px) + 12px);display:flex;flex-direction:column;gap:2px;font-size:13px}
+.gtoc b{font-size:12px;color:var(--ink-3);margin:0 0 6px 10px;font-weight:700}
+.gtoc a{color:var(--ink-2);text-decoration:none;padding:6px 10px;border-radius:8px}
+.gtoc a:hover{background:var(--blue-ll);color:var(--blue)}
+.gbody{display:flex;flex-direction:column;gap:16px;min-width:0}
+.ghero{background:linear-gradient(135deg,var(--navy),#24407e);color:#fff;border-radius:var(--r);padding:24px 26px}
+.ghero h2{margin:0 0 6px;font-size:21px}
+.ghero p{margin:0;opacity:.88;font-size:14px;line-height:1.65}
+.ghero .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.ghero .pills span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:4px 11px;font-size:12.5px}
+.gsec{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:20px 22px;scroll-margin-top:calc(var(--stick,110px) + 12px)}
+.gsec h3{margin:0 0 12px;font-size:16.5px;display:flex;align-items:center;gap:9px}
+.gsec h3 .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--blue-l);color:var(--blue);font-size:13px;flex:none}
+.gsec p,.gsec li{font-size:14px;line-height:1.75;color:var(--ink-2)}
+.gsec p{margin:0 0 8px}
+.gsec ul,.gsec ol{margin:4px 0 8px;padding-left:20px}
+.gsec b{color:var(--ink)}
+.gsteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:4px}
+.gstep{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--blue-ll)}
+.gstep .k{font-size:12px;font-weight:800;color:var(--blue)}
+.gstep>b{display:block;margin:4px 0;font-size:14.5px}
+.gstep span{font-size:13px;color:var(--ink-2);line-height:1.6}
+.gcode{background:#f7f8fb;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--docfont);font-size:13.5px;line-height:1.75;white-space:pre-wrap;color:var(--ink);margin:6px 0 10px;overflow-x:auto}
+.gtwo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gtwo>div>.cap{font-size:12px;font-weight:700;color:var(--ink-3);margin-bottom:2px}
+.gnote{background:var(--amber-l);border:1px solid #f1d6a8;color:#6b3d00;border-radius:10px;padding:10px 13px;font-size:13.5px;line-height:1.65;margin-top:6px}
+.gok{background:var(--ok-l);border:1px solid #bfe3cf;color:#145c3d;border-radius:10px;padding:10px 13px;font-size:13.5px;line-height:1.65;margin-top:6px}
+.gtable{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
+.gtable th,.gtable td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;line-height:1.6}
+.gtable th{background:#f7f8fb;color:var(--ink-2);font-weight:700}
+.gfaq details{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:8px;background:#fff}
+.gfaq summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--ink)}
+.gfaq details p{margin:8px 0 0}
+.kbd{display:inline-block;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 6px;font-size:12px;background:#fff;color:var(--ink)}
+@media (max-width:900px){.guide{grid-template-columns:minmax(0,1fr)}.gtoc{display:none}.gsteps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.tabs-in{padding:0 10px}.tab{padding:10px 10px 8px;font-size:13.5px}.guide{padding:14px 12px 60px}.gsteps,.gtwo{grid-template-columns:minmax(0,1fr)}.gsec{padding:16px}.tabs{top:52px}}
 </style>
 </head>
 <body>
@@ -219,7 +266,12 @@ textarea.txt{resize:vertical;line-height:1.6;min-height:160px}
   </div>
 </header>
 
-<div class="wrap">
+<nav class="tabs" aria-label="화면 선택"><div class="tabs-in" role="tablist">
+  <button class="tab" role="tab" id="tabBtnWrite" aria-controls="tabWrite" aria-selected="true"><svg><use href="#i-doc"/></svg>공문 작성</button>
+  <button class="tab" role="tab" id="tabBtnGuide" aria-controls="tabGuide" aria-selected="false" tabindex="-1"><svg><use href="#i-help"/></svg>사용자 가이드</button>
+</div></nav>
+
+<div class="wrap" id="tabWrite" role="tabpanel" aria-labelledby="tabBtnWrite">
   <div class="col">
     <section class="mode" aria-label="공문 작성 모드">
       <div class="t grow"><b>공문 작성 모드</b><span class="mtag" id="modeTag">일반 공문</span>
@@ -282,6 +334,128 @@ textarea.txt{resize:vertical;line-height:1.6;min-height:160px}
       <span class="tip">본문 일부를 마우스로 선택한 뒤 채팅으로 요청하면 그 부분만 고쳐요.</span>
     </div>
   </section>
+</div>
+
+
+<div class="guide" id="tabGuide" role="tabpanel" aria-labelledby="tabBtnGuide" hidden>
+  <nav class="gtoc" aria-label="가이드 목차"><b>목차</b>
+    <a href="#g-start">빠르게 시작하기</a><a href="#g-mode">작성 모드</a><a href="#g-memo">메모 쓰는 법</a><a href="#g-outline">제목으로 개요 채우기</a>
+    <a href="#g-paste">완성된 공문 고치기</a><a href="#g-lint">빨간 밑줄·규정 정돈</a><a href="#g-chat">채팅으로 고치기</a><a href="#g-edufine">에듀파인에 붙여 넣기</a>
+    <a href="#g-ai">AI 설정 (선택)</a><a href="#g-rules">공문 규정 요약</a><a href="#g-faq">자주 묻는 질문</a></nav>
+  <div class="gbody">
+    <div class="ghero"><h2>공문메이커 사용자 가이드</h2>
+      <p>제목과 메모만 적으면 행정안전부 공문서 작성 기준에 맞춘 K-에듀파인 기안문 본문을 만들어 줍니다. 이미 쓴 공문을 붙여 넣으면 규정에 어긋난 곳만 골라 고쳐 줍니다.</p>
+      <div class="pills"><span>AI 없이 모든 기본 기능 사용</span><span>인터넷 없이도 작동</span><span>작성 내용은 내 브라우저에만 저장</span></div></div>
+
+    <section class="gsec" id="g-start"><h3><span class="n">1</span>빠르게 시작하기</h3>
+      <div class="gsteps">
+        <div class="gstep"><div class="k">STEP 1</div><b>모드 고르기</b><span>일반 공문인지 지출품의인지 고릅니다.</span></div>
+        <div class="gstep"><div class="k">STEP 2</div><b>제목 쓰기</b><span>제목을 쓰고 <span class="kbd">Enter</span>를 누르면 메모 칸에 기본 개요가 들어갑니다.</span></div>
+        <div class="gstep"><div class="k">STEP 3</div><b>메모 채우고 만들기</b><span>○ 칸을 채운 뒤 <b>[초안 만들기]</b>를 누릅니다.</span></div>
+        <div class="gstep"><div class="k">STEP 4</div><b>복사해서 붙이기</b><span><b>[제목 복사]</b>, <b>[본문 복사]</b> 후 K-에듀파인 기안문에 붙여 넣습니다.</span></div>
+      </div>
+      <div class="gok">처음이라면 왼쪽 위 <b>[예시 채우기]</b> → <b>[초안 만들기]</b>를 눌러 결과를 먼저 보세요.</div></section>
+
+    <section class="gsec" id="g-mode"><h3><span class="n">2</span>작성 모드</h3>
+      <table class="gtable"><tr><th style="width:110px">모드</th><th>이럴 때</th><th>만들어지는 첫 문장</th></tr>
+        <tr><td><b>일반 공문</b></td><td>연수·회의·행사 안내, 협조 요청, 모집, 조사·제출, 결과 보고 등</td><td>「○○을 다음과 같이 실시하오니, … 바랍니다.」</td></tr>
+        <tr><td><b>지출품의</b></td><td>물품 구입, 간식비·협의회비, 행사 운영비 지출</td><td>「○○ 운영을 위한 ○○비를 다음과 같이 지출하고자 합니다.」</td></tr></table></section>
+
+    <section class="gsec" id="g-memo"><h3><span class="n">3</span>메모 쓰는 법</h3>
+      <p>격식 없이 적어도 됩니다. 아래 약속만 지키면 항목 기호와 들여쓰기는 알아서 맞춥니다.</p>
+      <ul><li><b>첫 줄</b>은 목적·취지 문장. "~하고자 함", "참석 바람"처럼 써도 공문 말투로 바꿔 줍니다.</li>
+        <li><b>항목: 내용</b> 꼴로 쓰면 가. 나. 다. 항목이 됩니다. (내 용, 총 금 액처럼 띄어 쓴 이름도 그대로 둡니다.)</li>
+        <li>줄 앞에 <b>-</b>를 붙이면 바로 위 항목의 하위 항목 1) 2)가 됩니다.</li>
+        <li><b>관련:</b> 줄은 1번 관련 문서로, <b>붙임:</b> 줄은 맨 아래 붙임으로 갑니다. 붙임은 쉼표로 여러 개를 쓸 수 있습니다.</li>
+        <li>날짜·시간은 아무렇게나 써도 됩니다. "4월 15일 수요일 오후 3시 반"도 규정대로 바뀝니다.</li></ul>
+      <div class="gtwo"><div><div class="cap">메모</div><div class="gcode">교직원 연수를 실시하오니 전 교직원은 참석 바람.
+관련: 1025(2026.3.2)
+일시: 2026년 4월 15일 수요일 15시 30분 ~ 17시 30분
+장소: 본교 시청각실
+교육 내용:
+- 이론 교육(40분)
+- 실습 교육(80분)
+붙임: 연수 계획 1부, 참석자 명단 1부</div></div>
+        <div><div class="cap">결과</div><div class="gcode">1. 관련: 광주경신여자고등학교-1025(2026. 3. 2.)호.
+2. 교직원 연수를 다음과 같이 실시하오니, 전 교직원은 참석하여 주시기 바랍니다.
+  가. 일시: 2026. 4. 15.(수) 15:30~17:30
+  나. 장소: 본교 시청각실
+  다. 교육 내용
+    1) 이론 교육(40분)
+    2) 실습 교육(80분)
+
+붙임  1. 연수 계획 1부.
+         2. 참석자 명단 1부.  끝.</div></div></div>
+      <p>관련 문서 번호만 쓰면(<b>1025(2026.3.2)</b>) 학교 이름이 자동으로 붙습니다.</p></section>
+
+    <section class="gsec" id="g-outline"><h3><span class="n">4</span>제목으로 개요 채우기</h3>
+      <p>메모 칸이 비어 있을 때 제목을 쓰고 <span class="kbd">Enter</span>를 누르거나 다른 곳을 클릭하면, 제목에 맞는 기본 개요가 자동으로 들어갑니다. 메모 칸 오른쪽 위 <b>[제목으로 개요 채우기]</b> 버튼으로 언제든 다시 넣을 수 있습니다.</p>
+      <ul><li>제목의 낱말로 공문 종류를 구분합니다. 연수, 협의회·회의, 체험학습, 대회·행사, 모집·채용, 조사·제출, 결과 보고, 상담 주간, 협조 요청, 운영 계획, 물품 구입, 간식비 등을 구분합니다.</li>
+        <li>날짜·장소·인원·금액처럼 제목만으로 알 수 없는 내용은 <b>○ 칸</b>으로 비워 둡니다. ○ 칸이 남은 채로 본문을 복사하면 알려 줍니다.</li>
+        <li>이미 쓴 메모가 있으면 바꿀지 먼저 묻고, 바꾼 뒤에도 알림창의 <b>[되돌리기]</b>로 되살릴 수 있습니다.</li></ul></section>
+
+    <section class="gsec" id="g-paste"><h3><span class="n">5</span>완성된 공문을 붙여 넣어 고치기</h3>
+      <p>예전에 쓴 공문이나 받은 공문을 <b>메모 칸</b>에 붙여 넣고 [초안 만들기]를 누르거나, <b>본문 칸</b>에 붙여 넣고 <b>[규정 정돈]</b>을 누르세요. 문장은 그대로 두고 규정에 어긋난 곳만 고칩니다.</p>
+      <div class="gtwo"><div><div class="cap">붙여 넣은 공문</div><div class="gcode">1. 관련: 광주경신여자고등학교-4011 (2026. 4. 3.)
+2. … 물품 구입비를 지출하고자 합니다.
+가. 대 상: 체육.예술과, 생활.교양과
+나. 일 시: 2026.11. 2.(월) ~ 11. 6.(금)
+다. 총 금 액: 500,100원. 끝.</div></div>
+        <div><div class="cap">고친 결과</div><div class="gcode">1. 관련: 광주경신여자고등학교-4011(2026. 4. 3.)호.
+2. … 물품 구입비를 지출하고자 합니다.
+  가. 대 상: 체육·예술과, 생활·교양과
+  나. 일 시: 2026. 11. 2.(월)~11. 6.(금)
+  다. 총 금 액: 금500,100원(금오십만일백원).  끝.</div></div></div>
+      <p>한글·PDF에서 복사하다 줄이 잘린 글자(<b>프로그</b>↵<b>램</b>)도 다시 이어 붙입니다.</p></section>
+
+    <section class="gsec" id="g-lint"><h3><span class="n">6</span>빨간 밑줄과 규정 정돈</h3>
+      <ul><li>본문에서 규정과 다른 곳에는 <b>빨간 물결 밑줄</b>이 생기고, 아래 <b>교정 추천</b> 목록에 이유와 고칠 내용이 나옵니다. ∨ 표시는 띄어 쓸 자리입니다.</li>
+        <li>추천 항목을 누르면 그곳으로 이동하고, <b>[적용]</b>으로 하나씩, <b>[모두 고치기]</b>로 한 번에 고칠 수 있습니다.</li>
+        <li><b>[규정 정돈]</b>은 번호를 다시 매기고 들여쓰기·빈 줄·붙임 줄 맞춤·'끝.'까지 한꺼번에 맞춥니다. 본문을 직접 고친 뒤 눌러 주면 좋습니다.</li>
+        <li>바꾼 뒤 아래에 뜨는 알림창의 <b>[되돌리기]</b>로 바로 전 상태로 돌아갈 수 있습니다.</li></ul></section>
+
+    <section class="gsec" id="g-chat"><h3><span class="n">7</span>채팅으로 고치기</h3>
+      <table class="gtable"><tr><th style="width:150px">방법</th><th>설명</th><th style="width:80px">AI 필요</th></tr>
+        <tr><td><b>빠른 버튼</b></td><td>더 격식있게 · 관련 공문 추가 · 붙임 서류 추가 · 1) 하위항목 추가</td><td>아니요</td></tr>
+        <tr><td><b>간단한 요청</b></td><td>"제목을 ○○로 바꿔 줘", "붙임에 회의록 추가", "관련 1234(2026.10.1) 추가", "규정 정돈"</td><td>아니요</td></tr>
+        <tr><td><b>자유로운 요청</b></td><td>"문장을 더 부드럽게", "일시를 4월 16일로 바꿔 줘"</td><td>예</td></tr>
+        <tr><td><b>부분만 고치기</b></td><td>본문 일부를 마우스로 선택한 뒤 요청하면 그 부분만 고칩니다.</td><td>예</td></tr></table></section>
+
+    <section class="gsec" id="g-edufine"><h3><span class="n">8</span>K-에듀파인에 붙여 넣기</h3>
+      <ol><li>업무포털 → K-에듀파인 → 기안 작성 화면을 엽니다. (위쪽 <b>[업무포털]</b> 버튼)</li>
+        <li>공문메이커에서 <b>[제목 복사]</b>를 누르고 에듀파인 제목 칸에 붙여 넣습니다 (<span class="kbd">Ctrl</span>+<span class="kbd">V</span>).</li>
+        <li><b>[본문 복사]</b> (또는 위쪽 <b>[에듀파인 본문 복사]</b>)를 누르고 본문 편집기 첫 줄에 붙여 넣습니다.</li>
+        <li>붙임 둘째 줄이 첫째 줄과 맞지 않으면 [띄어쓰기 규정] 창 아래 <b>붙임 둘째 줄 앞 공백</b> 칸 수를 바꿉니다 (기본 9칸).</li></ol>
+      <div class="gnote">교정 추천이 남아 있거나 ○ 칸이 비어 있으면 복사할 때 알려 줍니다. 그래도 복사는 됩니다.</div>
+      <p style="margin-top:10px">지출품의 품목내역 엑셀이 필요하면 위쪽 <b>[품목내역 도우미]</b>를 쓰세요.</p></section>
+
+    <section class="gsec" id="g-ai"><h3><span class="n">9</span>AI 설정 (선택)</h3>
+      <p>AI 키가 없어도 초안 만들기, 규정 교정, 개요 채우기, 빠른 버튼이 모두 됩니다. 채팅으로 자유롭게 문장을 고치고 싶을 때만 구글 제미나이 API 키를 넣으세요.</p>
+      <ol><li>구글 AI 스튜디오(aistudio.google.com)에 학교 구글 계정으로 들어가 <b>Get API key → Create API key</b>를 누릅니다.</li>
+        <li>만들어진 키를 복사해 공문메이커 위쪽 <b>[AI 설정]</b>에 붙여 넣고 <b>[연결 확인]</b> → <b>[저장]</b>을 누릅니다.</li>
+        <li>답이 느리면 모델을 <b>gemini-flash-lite-latest</b>로 바꿔 보세요.</li></ol>
+      <div class="gnote">키는 이 컴퓨터의 브라우저에만 저장되고 다른 곳으로 보내지지 않습니다. 키를 다른 사람과 공유하지 마시고, 공용 PC에서는 사용 후 [AI 설정] → [키 지우기]를 눌러 주세요. AI에 보내는 공문에 학생 이름 등 개인정보가 들어가지 않도록 주의하세요.</div></section>
+
+    <section class="gsec" id="g-rules"><h3><span class="n">10</span>공문 규정 요약</h3>
+      <table class="gtable"><tr><th style="width:120px">항목</th><th>규정</th><th>예시</th></tr>
+        <tr><td>항목 기호</td><td>1. → 가. → 1) → 가) → (1) → (가), 하위는 2타씩 들여쓰기</td><td>가.는 2타, 1)은 4타</td></tr>
+        <tr><td>관련 문서</td><td>번호(날짜) 뒤에 '호.', 1과 2 사이 빈 줄 없음</td><td>○○고등학교-1025(2026. 3. 2.)호.</td></tr>
+        <tr><td>날짜·시간</td><td>마침표로 띄워 쓰고, 24시각제와 쌍점</td><td>2026. 4. 15.(수) 15:30~17:30</td></tr>
+        <tr><td>쌍점·물결표</td><td>쌍점은 앞에 붙이고 뒤는 한 칸, 물결표는 붙여 씀</td><td>장소: 강당 / 4. 1.~4. 30.</td></tr>
+        <tr><td>금액</td><td>숫자 앞에 '금', 괄호 안에 한글</td><td>금500,100원(금오십만일백원)</td></tr>
+        <tr><td>가운뎃점·띄어쓰기</td><td>나열은 가운뎃점, '외'와 수는 띄움</td><td>체육·예술과, 1·2학년, 외 8명</td></tr>
+        <tr><td>붙임·끝</td><td>본문 아래 한 줄 띄우고 '붙임' 뒤 2타, 둘째 줄은 첫째 줄에 맞춤, 마지막에 2타 띄우고 '끝.'</td><td>붙임∨∨1. 계획 1부.∨∨끝.</td></tr></table>
+      <p style="margin-top:8px">자세한 규정과 설정(학교 이름, '호.' 붙이기, 붙임 줄 맞춤 칸 수)은 위쪽 <b>[띄어쓰기 규정]</b> 버튼에 있습니다.</p></section>
+
+    <section class="gsec gfaq" id="g-faq"><h3><span class="n">11</span>자주 묻는 질문</h3>
+      <details><summary>AI 키가 없어도 쓸 수 있나요?</summary><p>네. 초안 만들기, 붙여 넣은 공문 고치기, 빨간 밑줄 교정, 규정 정돈, 개요 채우기, 빠른 버튼은 모두 AI 없이 작동하고 인터넷 연결도 필요 없습니다.</p></details>
+      <details><summary>작성하던 내용은 어디에 저장되나요?</summary><p>쓰는 즉시 이 컴퓨터의 브라우저에 자동 저장되어, 창을 닫았다 열어도 그대로 남아 있습니다. 서버로는 보내지 않습니다. 다른 컴퓨터나 다른 브라우저에서는 보이지 않습니다.</p></details>
+      <details><summary>실수로 지웠어요.</summary><p>바꾸거나 지운 직후 아래에 뜨는 알림창의 <b>[되돌리기]</b>를 누르세요. 본문 칸에서는 <span class="kbd">Ctrl</span>+<span class="kbd">Z</span>도 됩니다.</p></details>
+      <details><summary>에듀파인에 붙였더니 붙임 둘째 줄이 어긋나요.</summary><p>[띄어쓰기 규정] 창 아래 '붙임 둘째 줄 앞 공백' 칸 수를 바꾼 뒤 [규정 정돈]을 누르고 다시 복사하세요.</p></details>
+      <details><summary>'아래와 같이'를 '다음과 같이'로 바꿔야 하나요?</summary><p>둘 다 틀린 표현은 아니라서 붙여 넣은 공문에서는 그대로 둡니다. 새로 만드는 초안은 '다음과 같이'를 씁니다.</p></details>
+      <details><summary>교정이 틀린 것 같아요.</summary><p>교정 추천은 고치기 전에 내용을 보여 주니, 맞지 않으면 그 항목은 고치지 않고 두면 됩니다. 본문은 언제든 직접 고칠 수 있습니다.</p></details>
+    </section>
+  </div>
 </div>
 
 <!-- rules modal -->
@@ -769,7 +943,7 @@ $("#genBtn").onclick=async()=>{
 };
 async function genInner(title,memo,u){
   if(looksLikeDoc(memo)){
-    await sleep(650);const before=lintIssues(memo.replace(/[\u00a0\u3000]/g," ")).length;
+    await sleep(220);const before=lintIssues(memo.replace(/[\u00a0\u3000]/g," ")).length;
     $("#docTitle").value=title;setBody(fixAll(tidyDoc(memo)),null,null);
     chat("bot",`붙여 넣은 공문을 규정에 맞게 고쳤어요${before?` (교정 ${before}곳)`:""}. 날짜·시간·물결표·쌍점·가운뎃점·금액 한글 병기·관련 '호.'·항목 들여쓰기·붙임 줄 맞춤·'  끝.'을 정리했어요. 원래 문장은 그대로 두었어요.`);
     toast("공문을 규정대로 고쳤어요",u);return;}
@@ -781,7 +955,7 @@ async function genInner(title,memo,u){
       chat("bot",`초안을 만들었어요. 규정 정돈까지 마쳤어요.${r.note?"\n"+r.note:""}\n채팅으로 더 고칠 내용을 말해 주세요.`);toast("AI 초안을 만들었어요",u);return;}
     catch(e){w.remove();chat("bot",`AI 초안에 실패해서 규칙에 따라 만들었어요. (${e.message})`,"err");}
   }
-  if(!aiOn())await sleep(650);
+  if(!aiOn())await sleep(220);
   $("#docTitle").value=title;
   setBody(fixAll(buildDraft(title,memo)),null,null);
   chat("bot",mode==="expense"?"지출품의 초안을 만들었어요. 구입품목·예산(한글 금액)·구매처와 붙임을 정리했어요.":"공문 초안을 만들었어요. 관련(호.)·항목(가. / 1))·붙임 줄 맞춤·끝 표시를 규정대로 넣었어요.");
@@ -895,11 +1069,18 @@ K-에듀파인 기안문 '본문'만 씁니다(수신·발신 명의 제외). �
 - 붙임은 본문 끝에서 한 줄 띄우고 "붙임  1. ○○ 1부." 형식, 둘째 줄부터 공백 ${OPT.pad}칸 뒤 "2. ○○ 1부.", 마지막에 공백 2칸 + "끝.". 붙임이 없으면 본문 마지막 문장 뒤 공백 2칸 + "끝.".
 ${mode==="expense"?'- 지출품의(우리 학교 양식): "2. ○○ 운영을 위한 ○○비를 다음과 같이 지출하고자 합니다." 다음 "  가. 내 용: …", "  나. 대 상: …", "  다. 구매품목:" 아래 "    1) ○○과: ○○ 외 ○종", "  라. 총 금 액: 금500,100원(금오십만일백원)"처럼 가. 나. 항목으로 정리. 간식·협의회비는 품 명, 구 입 처, 일 시, 장 소, 내 용, 참 석 자, 총 액 순. 메모의 항목 이름(띄어 쓴 \'내 용\' 등)은 그대로 둠.':'- 일반 공문: 목적·취지 문장 뒤 "다음과 같이 …"로 가. 나. 항목(일시, 장소, 대상, 내용 등)을 정리.'}
 JSON으로만 답하세요: {"title":"제목","body":"본문 전체(줄바꿈은 \\n)","note":"사용자에게 한 줄 설명"}`;
+// 빠른 응답: '생각하기' 끄기 → 안 되는 모델이면 낮게 → 기본값 순서로 시도 (모델마다 된 설정을 기억)
+const AI_GC=[{responseMimeType:"application/json",temperature:0.3,thinkingConfig:{thinkingBudget:0}},{responseMimeType:"application/json",temperature:0.3,thinkingConfig:{thinkingLevel:"low"}},{responseMimeType:"application/json"},null];
+const aiGcOk={};
 async function aiCall(prompt){
-  const c=aiCfg();const body={contents:[{role:"user",parts:[{text:prompt}]}],generationConfig:{responseMimeType:"application/json"}};
-  const H={"Content-Type":"application/json","x-goog-api-key":c.key};
-  let r=await aiFetch(AI_URL(c.model)+":generateContent",{method:"POST",headers:H,body:JSON.stringify(body)});let j=null;try{j=await r.json();}catch(e){}
-  if(!r.ok&&r.status===400&&!/API key/i.test((j&&j.error&&j.error.message)||"")){delete body.generationConfig;r=await aiFetch(AI_URL(c.model)+":generateContent",{method:"POST",headers:H,body:JSON.stringify(body)});j=null;try{j=await r.json();}catch(e){}}
+  const c=aiCfg();const H={"Content-Type":"application/json","x-goog-api-key":c.key};
+  let r,j,i=aiGcOk[c.model]||0;
+  for(;i<AI_GC.length;i++){
+    const body={contents:[{role:"user",parts:[{text:prompt}]}]};if(AI_GC[i])body.generationConfig=AI_GC[i];
+    r=await aiFetch(AI_URL(c.model)+":generateContent",{method:"POST",headers:H,body:JSON.stringify(body)});j=null;try{j=await r.json();}catch(e){}
+    if(r.ok){aiGcOk[c.model]=i;break;}
+    if(!(r.status===400&&!/API key/i.test((j&&j.error&&j.error.message)||"")))break;
+  }
   if(!r.ok)throw new Error(aiErr(r.status,j));
   const cand=j&&j.candidates&&j.candidates[0];const text=cand&&cand.content&&cand.content.parts?cand.content.parts.filter(p=>p.text&&!p.thought).map(p=>p.text).join(""):"";
   if(!text)throw new Error(cand&&cand.finishReason==="SAFETY"?"AI가 이 요청을 처리하지 않았어요":"AI가 빈 답을 보냈어요");
@@ -946,6 +1127,19 @@ if(d){$("#inTitle").value=d.t||"";$("#inMemo").value=d.m||"";$("#docTitle").valu
   (d.log||[]).forEach(([c,t])=>{const el=document.createElement("div");el.className=c.replace(/\bwait\b/,"");el.textContent=t;$("#chatLog").appendChild(el);});}
 if(!$("#chatLog").children.length)welcome();
 aiBadge();lintDoc();booted=true;
+/* ---------- 탭 ---------- */
+function showTab(g,push){const isG=g==="guide";$("#tabWrite").hidden=isG;$("#tabGuide").hidden=!isG;
+  $("#tabBtnWrite").setAttribute("aria-selected",String(!isG));$("#tabBtnGuide").setAttribute("aria-selected",String(isG));
+  $("#tabBtnWrite").tabIndex=isG?-1:0;$("#tabBtnGuide").tabIndex=isG?0:-1;
+  if(push!==false){try{history.replaceState(null,"",isG?"#guide":location.pathname+location.search);}catch(e){}}
+  scrollTo(0,0);}
+$("#tabBtnWrite").onclick=()=>showTab("write");$("#tabBtnGuide").onclick=()=>showTab("guide");
+document.querySelector(".tabs-in").addEventListener("keydown",e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){const g=$("#tabGuide").hidden;showTab(g?"guide":"write");(g?$("#tabBtnGuide"):$("#tabBtnWrite")).focus();e.preventDefault();}});
+document.querySelectorAll(".gtoc a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const t=document.querySelector(a.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"});}));
+if(location.hash==="#guide")showTab("guide",false);
+addEventListener("hashchange",()=>{if(location.hash==="#guide")showTab("guide",false);else if(!location.hash)showTab("write",false);});
+const fixTabsTop=()=>{const h=document.querySelector(".top").offsetHeight;document.querySelector(".tabs").style.top=h+"px";document.documentElement.style.setProperty("--stick",(h+46)+"px");};
+fixTabsTop();addEventListener("resize",fixTabsTop);
 window.__gm={outlineFromTitle,buildDraft,tidyDoc,lintIssues,fixAll,parseMemo,formalize,setMode};
 })();
 </script>
