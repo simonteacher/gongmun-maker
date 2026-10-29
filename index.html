@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공문메이커 · 광주경신여자고등학교</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+:root{
+  --paper:#f3f5f9; --sheet:#fff; --ink:#18263b; --ink-2:#4a5a70; --ink-3:#8593a6;
+  --line:#e1e6ee; --line-2:#eef1f5;
+  --blue:#2551c4; --blue-d:#1b3f9e; --blue-l:#eaf0fd; --blue-ll:#f5f8ff;
+  --navy:#16213a; --seal:#c8372d; --seal-l:#fdeeec; --ok:#1d7f55; --ok-l:#e7f5ee; --amber:#a35a00; --amber-l:#fff4e2;
+  --doc:#fffdf2; --r:12px;
+  --shadow:0 1px 2px rgba(24,38,59,.05),0 4px 16px rgba(24,38,59,.05);
+  --docfont:"Batang","바탕","BatangChe","Noto Serif KR","Nanum Myeongjo",serif;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕","Noto Sans KR",system-ui,sans-serif;font-size:14px;line-height:1.55;letter-spacing:-.01em}
+button,input,select,textarea{font:inherit;color:inherit;letter-spacing:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* top */
+.top{background:var(--navy);color:#fff;position:sticky;top:0;z-index:20}
+.top-in{max-width:1400px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;gap:12px}
+.top .logo{width:36px;height:36px;border-radius:50%;background:#fff;padding:2px;flex:none}
+.brand b{display:block;font-size:17px;letter-spacing:-.03em}
+.brand span{display:block;font-size:12px;color:#9fb0cc;margin-top:-2px}
+.grow{flex:1}
+.tbtn{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#e7edf8;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
+.tbtn:hover{background:rgba(255,255,255,.14)}
+.tbtn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.tbtn.primary:hover{background:#3563d8}
+.tbtn svg{width:15px;height:15px}
+.badge{font-size:11px;font-weight:700;padding:1px 7px;border-radius:10px;background:rgba(255,255,255,.14);color:#c9d6ee}
+.badge.on{background:#1f9d68;color:#fff}
+@media (max-width:900px){.top .bl{display:none}.brand span{display:none}}
+@media (max-width:600px){.top .tbtn.lk{display:none}.top-in{gap:6px}.tbtn{padding:0 9px}}
+
+/* layout */
+.wrap{max-width:1400px;margin:0 auto;padding:20px 22px 60px;display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:1000px){.wrap{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.wrap{padding:12px 10px 50px}.top-in{padding:10px 12px}}
+.col{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;min-width:0}
+.col>*{min-width:0;max-width:100%}
+.chat{overflow:hidden}
+.msg{overflow-wrap:anywhere}
+.panel{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.ph{display:flex;align-items:center;gap:8px;padding:14px 18px 0}
+.ph h2{margin:0;font-size:15px;letter-spacing:-.03em}
+.pb{padding:12px 18px 18px}
+.sub{color:var(--ink-2);font-size:12.5px;margin:2px 0 0}
+.opt{font-weight:400;color:var(--ink-3);font-size:12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:13px;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.btn:hover{background:var(--blue-ll);border-color:#cdd8f2;color:var(--ink)}
+.btn svg{width:15px;height:15px}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-d)}
+.btn.dark{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn.dark:hover{background:#22304f}
+.btn.lg{height:44px;width:100%;font-size:14.5px;border-radius:10px}
+.btn.soft-red{color:var(--seal);border-color:#f3cfcb;background:#fff7f6}
+.btn.soft-blue{color:var(--blue-d);border-color:#cdd8f2;background:var(--blue-ll)}
+.btn[disabled]{opacity:.5;pointer-events:none}
+
+/* mode */
+.mode{display:flex;align-items:center;gap:12px;padding:14px 18px;border:1.5px solid #c9d7f7;border-radius:var(--r);background:#fff;box-shadow:var(--shadow)}
+.mode .t b{font-size:14.5px}
+.mtag{font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:12px;background:var(--blue);color:#fff;margin-left:6px}
+.mtag.ex{background:var(--ok)}
+.mtag{white-space:nowrap}
+@media (max-width:600px){.mode{flex-wrap:wrap}.mode .seg{width:100%}.mode .seg button{flex:1;justify-content:center}.ph{flex-wrap:wrap}}
+.seg{display:flex;gap:3px;background:var(--line-2);padding:3px;border-radius:9px;flex:none}
+.seg button{border:0;background:transparent;height:32px;border-radius:7px;font-size:13px;font-weight:700;color:var(--ink-2);cursor:pointer;padding:0 12px;display:inline-flex;align-items:center;gap:5px}
+.seg button.on{background:var(--blue);color:#fff}
+.seg button.on.ex{background:var(--ok)}
+.seg svg{width:14px;height:14px}
+
+/* fields */
+.field{display:grid;gap:5px;margin-bottom:12px}
+.lrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.lrow>label{font-size:12.5px;font-weight:700;color:var(--ink-2);flex:1;min-width:0}
+.field>label{font-size:12.5px;font-weight:700;color:var(--ink-2)}
+.txt{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px 11px;background:#fff}
+.txt:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-l)}
+input.txt{height:40px}
+textarea.txt{resize:vertical;line-height:1.6;min-height:160px}
+
+/* chat */
+.chat{display:flex;flex-direction:column;height:520px}
+@media (max-width:1000px){.chat{height:460px}}
+.chat-log{flex:1;overflow:auto;padding:12px 16px;display:flex;flex-direction:column;gap:10px;background:#fafbfd;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.msg{max-width:92%;padding:9px 12px;border-radius:12px;font-size:13px;line-height:1.55;white-space:pre-wrap;word-break:keep-all}
+.msg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;border-top-left-radius:4px}
+.msg.me{background:var(--blue);color:#fff;align-self:flex-end;border-top-right-radius:4px}
+.msg.err{background:var(--seal-l);border-color:#f3cfcb;color:#8f241c}
+.msg.wait{color:var(--ink-3)}
+.chips{display:flex;gap:6px;padding:10px 14px 4px;overflow-x:auto}
+.chip{flex:none;border:1px solid var(--line);background:#fff;border-radius:16px;height:30px;padding:0 11px;font-size:12.5px;font-weight:600;color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.chip:hover{border-color:#cdd8f2;background:var(--blue-ll);color:var(--ink)}
+.chat-in{display:flex;gap:6px;padding:10px 14px 14px}
+.chat-in .txt{height:40px}
+.selnote{margin:0 14px;font-size:12px;color:var(--blue-d);background:var(--blue-ll);border:1px solid #d7e2fb;border-radius:8px;padding:6px 10px;display:flex;gap:8px;align-items:center}
+.selnote b{font-weight:700}
+.selnote span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aistate{font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:12px;background:var(--line-2);color:var(--ink-3)}
+.aistate.on{background:var(--ok-l);color:var(--ok)}
+
+/* document */
+.docp .ph{padding-bottom:12px;border-bottom:1px solid var(--line-2);flex-wrap:wrap}
+.dot{width:8px;height:8px;border-radius:50%;background:#22b07d;flex:none}
+.docbg{background:#eef1f6;padding:22px;border-bottom:1px solid var(--line-2)}
+@media (max-width:600px){.docbg{padding:10px}}
+.sheetdoc{background:#fff;box-shadow:0 2px 10px rgba(24,38,59,.08);border:1px solid #dfe4ec;max-width:820px;margin:0 auto;padding:34px 38px 40px;min-height:620px}
+@media (max-width:600px){.sheetdoc{padding:20px 14px}}
+.sheetdoc{position:relative}
+.sheetdoc.busy>.dtitle,.sheetdoc.busy>.ed{filter:blur(3.5px);opacity:.5;pointer-events:none;user-select:none;transition:filter .2s,opacity .2s}
+.sheetdoc.busy .empty-doc{display:none}
+.genov{position:absolute;inset:0;z-index:5;display:none;cursor:progress}
+.sheetdoc.busy>.genov{display:block}
+.genov .gbg{position:absolute;inset:34px 38px auto;font-family:var(--docfont);font-size:15px;line-height:1.85;white-space:pre-wrap;color:#4b5563;filter:blur(3.5px);opacity:.42;pointer-events:none;user-select:none}
+.genov .gc{position:absolute;left:0;right:0;top:min(300px,42%);display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:0 16px}
+.genov .ring{position:relative;width:50px;height:50px;margin-bottom:12px}
+.genov .ring::before{content:"";position:absolute;inset:0;border-radius:50%;border:4px solid #c9daf8;border-top-color:#2563eb;border-right-color:#2563eb;animation:gspin .9s linear infinite}
+.genov .ring svg{position:absolute;left:50%;top:50%;width:20px;height:20px;transform:translate(-50%,-50%);fill:#2563eb}
+.genov .gt{font-size:13.5px;font-weight:700;color:#111827}
+.genov .gs{font-size:11.5px;color:#4b5563}
+@keyframes gspin{to{transform:rotate(360deg)}}
+@media (max-width:600px){.genov .gbg{inset:20px 14px auto}}
+.dtitle{display:flex;align-items:baseline;gap:14px;border-bottom:1.5px solid #222;padding-bottom:8px;margin-bottom:14px;font-family:var(--docfont)}
+.dtitle .lb{font-size:15px;font-weight:700;white-space:nowrap;letter-spacing:.3em}
+.dtitle input{flex:1;min-width:0;border:0;outline:none;font-family:var(--docfont);font-size:16px;font-weight:700;background:transparent;padding:2px 0}
+.dtitle input:focus{background:var(--blue-ll)}
+.ed{position:relative}
+.ed-hl,.ed-ta{font-family:var(--docfont);font-size:15px;line-height:1.85;letter-spacing:0;tab-size:4;padding:8px 10px;border:1px solid transparent;border-radius:4px;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:break-word;margin:0}
+.ed-hl{position:absolute;inset:0;overflow:hidden;color:transparent;pointer-events:none;background:var(--doc)}
+.ed-ta{position:relative;z-index:1;display:block;width:100%;min-height:520px;resize:vertical;background:transparent;outline:none;color:#111}
+.ed-ta:focus{border-color:#e6d98a}
+.ed-hl mark{color:transparent;background:rgba(200,55,45,.12);border-radius:2px;text-decoration:underline wavy #d0342c;text-decoration-thickness:1.5px;text-underline-offset:4px;text-decoration-skip-ink:none}
+.ed-hl mark.on{background:rgba(200,55,45,.3)}
+.ed-hl mark.zero{display:inline-block;width:.55em;height:1.2em;vertical-align:text-bottom;background:rgba(200,55,45,.3)}
+.ed-hl mark.ai{background:rgba(37,81,196,.13);text-decoration:none}
+.empty-doc{position:absolute;inset:40px 10px auto;text-align:center;color:var(--ink-3);font-size:14px;z-index:2;pointer-events:none;font-family:inherit}
+.dock{padding:12px 18px 16px;font-size:12px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:4px 14px}
+.dock b{color:var(--blue-d)}
+.dock .tip{flex-basis:100%;color:var(--blue);font-weight:600;margin-top:4px}
+
+/* lint */
+.lint{margin:12px auto 0;max-width:820px;font-size:12.5px;border-radius:8px;padding:9px 12px;display:none}
+.lint.ok{display:block;background:var(--ok-l);color:var(--ok)}
+.lint.warn{display:block;background:#fff5f4;border:1px solid #f3cfcb;color:#7c1f17}
+.lint-h{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.lint-h b{font-size:13px}.lint-h .opt{color:#9b4a42}
+.lint .btn{height:26px;font-size:12px;padding:0 10px}
+.sug{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;padding:7px 0;border-top:1px solid #f6dcd9}
+.sug .why{font-size:11.5px;color:#9b4a42;grid-column:1/-1;margin-bottom:-2px}
+.sug .fix{line-height:1.5;word-break:break-all;cursor:pointer}
+.sug del{background:rgba(200,55,45,.12);color:#b3261e;text-decoration:line-through;border-radius:3px;padding:0 3px;white-space:pre-wrap}
+.sug ins{background:var(--ok-l);color:var(--ok);text-decoration:none;border-radius:3px;padding:0 3px;font-weight:600;white-space:pre-wrap}
+.sug .arrow{color:#9b4a42;margin:0 4px}
+.sug .note{font-size:11.5px;color:#9b4a42;margin-left:8px}
+.sug .apply{height:24px;font-size:11.5px;padding:0 9px;border-color:#f0c4bf;color:#b3261e;background:#fff}
+.lint .more{font-size:12px;color:#9b4a42;padding-top:6px}
+
+/* modal */
+.scrim{position:fixed;inset:0;background:rgba(18,28,45,.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.scrim.open{display:flex}
+.modal{background:#fff;border-radius:14px;box-shadow:0 20px 60px rgba(18,28,45,.25);width:min(640px,100%);max-height:calc(100vh - 40px);display:flex;flex-direction:column}
+.mh{padding:18px 22px 0}.mh h3{margin:0;font-size:17px}
+.mb{padding:12px 22px;overflow:auto}
+.mf{padding:12px 22px 16px;display:flex;gap:8px;align-items:center;border-top:1px solid var(--line-2)}
+.rtable{width:100%;border-collapse:collapse;font-size:13px}
+.rtable th{text-align:left;background:#f8fafc;color:var(--ink-2);padding:8px 10px;border-bottom:1px solid var(--line)}
+.rtable td{padding:8px 10px;border-bottom:1px solid var(--line-2);vertical-align:top;line-height:1.6}
+.rtable td:first-child{font-weight:700;white-space:nowrap}
+.rtable code{font-family:var(--docfont);background:var(--doc);border:1px solid #efe6b8;border-radius:4px;padding:1px 6px;white-space:pre}
+.note-box{background:var(--amber-l);border:1px solid #f2d6a8;border-radius:8px;padding:10px 14px;font-size:12.5px;color:#6b4100;margin-top:8px}
+.chk{display:flex;align-items:center;gap:8px;font-size:13px;margin:4px 0;cursor:pointer}
+.chk input{width:16px;height:16px;accent-color:var(--blue)}
+.aistatus{margin-top:10px;font-size:13px;padding:9px 12px;border-radius:8px}
+.aistatus.ok{background:var(--ok-l);color:var(--ok)}.aistatus.err{background:var(--seal-l);color:#8f241c}.aistatus.wait{background:var(--blue-ll);color:var(--blue-d)}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);opacity:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;display:flex;align-items:center;gap:12px;font-size:13.5px;z-index:60;transition:opacity .2s,transform .2s;pointer-events:none;box-shadow:0 10px 30px rgba(18,28,45,.25);max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.toast button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:6px;height:28px;padding:0 10px;cursor:pointer;font-weight:700;font-size:12.5px}
+.toast:not(.act) button{display:none}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-doc" viewBox="0 0 16 16"><path d="M9.5 1.8H4.3A1.3 1.3 0 0 0 3 3.1v9.8a1.3 1.3 0 0 0 1.3 1.3h7.4a1.3 1.3 0 0 0 1.3-1.3V5.3zM9.5 1.8v3.5H13M5.5 8.5h5M5.5 11h3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 16 16"><path d="M1.5 2h2l1.6 7.6h7.4L14 4.5H4.2M6.3 13.3a.9.9 0 1 0 0-.1M11.8 13.3a.9.9 0 1 0 0-.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 16 16"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 3.5v-.5A1.5 1.5 0 0 0 9 1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 16 16"><path d="M8 1.8l1.3 3.4 3.4 1.3-3.4 1.3L8 11.2 6.7 7.8 3.3 6.5l3.4-1.3zM12.6 10.4l.6 1.5 1.5.6-1.5.6-.6 1.5-.6-1.5-1.5-.6 1.5-.6z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 16 16"><path d="M2.5 5.5h10l-2.5-2.5M13.5 10.5h-10l2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 16 16"><path d="M2.5 4h11M6 4V2.5h4V4M4 4l.7 9.5h6.6L12 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wand" viewBox="0 0 16 16"><path d="M2.5 13.5l8-8M9.5 2.5v2M12.5 5.5h2M11.6 3.4l1.4-1.4M3 2.5l.5 1.5L5 4.5 3.5 5 3 6.5 2.5 5 1 4.5 2.5 4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-rules" viewBox="0 0 16 16"><path d="M3 4h10M3 8h7M3 12h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-help" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6.3 6.2a1.8 1.8 0 1 1 2.4 1.7c-.5.2-.7.6-.7 1.1v.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="11.4" r=".8" fill="currentColor"/></symbol>
+  <symbol id="i-send" viewBox="0 0 16 16"><path d="M14 2L7 9M14 2l-4.5 12-2.5-5-5-2.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-link" viewBox="0 0 16 16"><path d="M6.5 9.5l3-3M7 4.5l1.2-1.2a2.6 2.6 0 0 1 3.7 3.7L10.7 8.2M9 11.5l-1.2 1.2a2.6 2.6 0 0 1-3.7-3.7L5.3 7.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="top-in">
+    <img class="logo" src="data:image/png;base64,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" alt="광주경신여자고등학교 교표" width="36" height="36">
+    <div class="brand"><b>공문메이커</b><span>광주경신여자고등학교 · K-에듀파인 기안문 본문 작성</span></div>
+    <span class="grow"></span>
+    <a class="tbtn lk" href="https://gen.eduptl.kr/" target="_blank" rel="noopener"><svg><use href="#i-link"/></svg><span class="bl">업무포털</span></a>
+    <a class="tbtn lk" href="https://simonteacher.github.io/edufine-helper/" target="_blank" rel="noopener"><svg><use href="#i-cart"/></svg><span class="bl">품목내역 도우미</span></a>
+    <button class="tbtn" id="aiBtn" title="제미나이 API 키 설정 (선택)"><svg><use href="#i-spark"/></svg><span class="bl">AI 설정</span><span class="badge" id="aiBadge">꺼짐</span></button>
+    <button class="tbtn" id="rulesBtn"><svg><use href="#i-help"/></svg><span class="bl">띄어쓰기 규정</span></button>
+    <button class="tbtn primary" id="copyBodyTop"><svg><use href="#i-copy"/></svg><span class="bl">에듀파인 본문 복사</span></button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="col">
+    <section class="mode" aria-label="공문 작성 모드">
+      <div class="t grow"><b>공문 작성 모드</b><span class="mtag" id="modeTag">일반 공문</span>
+        <p class="sub" id="modeDesc"></p></div>
+      <div class="seg" role="radiogroup" aria-label="모드">
+        <button data-m="general" role="radio" class="on"><svg><use href="#i-doc"/></svg>일반 공문</button>
+        <button data-m="expense" role="radio" class="ex"><svg><use href="#i-cart"/></svg>지출품의</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="ph"><h2>제목과 대략적인 내용</h2><span class="grow"></span>
+        <button class="btn soft-red" id="clearAll" style="height:28px;font-size:12px"><svg><use href="#i-trash"/></svg>전체 삭제</button>
+        <button class="btn soft-blue" id="fillEx" style="height:28px;font-size:12px"><svg><use href="#i-wand"/></svg>예시 채우기</button></div>
+      <div class="pb">
+        <div class="field"><label for="inTitle" id="lblTitle">공문 제목</label><input class="txt" id="inTitle" autocomplete="off" spellcheck="false"></div>
+        <div class="field"><div class="lrow"><label for="inMemo" id="lblMemo">본문 대략적인 내용 <span class="opt">메모처럼 자유롭게</span></label>
+          <button class="btn soft-blue" id="outlineBtn" type="button" title="제목에 맞는 기본 개요를 메모 칸에 넣어요" style="height:26px;font-size:11.5px;padding:0 9px"><svg><use href="#i-spark"/></svg>제목으로 개요 채우기</button></div>
+          <textarea class="txt" id="inMemo" spellcheck="false" rows="8"></textarea>
+          <span class="opt" id="memoHint"></span></div>
+        <button class="btn dark lg" id="genBtn"><svg><use href="#i-swap"/></svg><span id="genLabel">공문 서식(1. 가. 1)으로 초안 만들기</span></button>
+      </div>
+    </section>
+
+    <section class="panel chat" aria-label="공문 수정 채팅">
+      <div class="ph" style="padding-bottom:12px"><div class="grow"><h2>공문 수정 채팅</h2><p class="sub">말로 요청하면 공문 규정(1. 가. 1))을 지키며 고쳐요</p></div><span class="aistate" id="aiState">AI 꺼짐</span></div>
+      <div class="chat-log" id="chatLog" aria-live="polite"></div>
+      <div class="chips" id="chips">
+        <button class="chip" data-c="formal">✨ 더 격식있게</button>
+        <button class="chip" data-c="rel">📎 관련 공문 추가</button>
+        <button class="chip" data-c="att">📂 붙임 서류 추가</button>
+        <button class="chip" data-c="sub">🔢 1) 하위항목 추가</button>
+        <button class="chip" data-c="tidy">🧹 규정 정돈</button>
+      </div>
+      <div class="selnote" id="selNote" hidden><b>선택한 부분만 수정</b><span id="selText"></span><button class="btn" id="selClear" style="height:24px;font-size:11.5px">선택 해제</button></div>
+      <div class="chat-in"><input class="txt" id="chatIn" placeholder="공문에서 고치고 싶은 내용을 말해 주세요 (Enter)" autocomplete="off"><button class="btn primary" id="chatSend" style="height:40px"><svg><use href="#i-send"/></svg>수정</button></div>
+    </section>
+  </div>
+
+  <section class="panel docp">
+    <div class="ph"><span class="dot"></span><h2>K-에듀파인 기안문 본문</h2><span class="opt">· 직접 눌러서 고쳐도 돼요</span><span class="grow"></span>
+      <button class="btn" id="tidyBtn"><svg><use href="#i-rules"/></svg>규정 정돈</button>
+      <button class="btn" id="copyTitle"><svg><use href="#i-copy"/></svg>제목 복사</button>
+      <button class="btn primary" id="copyBody"><svg><use href="#i-copy"/></svg>본문 복사</button></div>
+    <div class="docbg">
+      <div class="sheetdoc">
+        <div class="dtitle"><span class="lb">제목</span><input id="docTitle" spellcheck="false" aria-label="공문 제목" placeholder="제목"></div>
+        <div class="ed"><div class="ed-hl" id="docHl" aria-hidden="true"></div>
+          <textarea class="ed-ta" id="docBody" spellcheck="false" aria-label="기안문 본문"></textarea>
+          <div class="empty-doc" id="emptyDoc">왼쪽에 제목과 메모를 적고 <b>초안 만들기</b>를 누르세요.<br>여기에 직접 써도 돼요.</div></div>
+        <div class="genov" id="genOv" role="status" aria-live="polite"><div class="gbg" id="genBg" aria-hidden="true"></div>
+          <div class="gc"><div class="ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l5 5v6.2l-2 2V8h-4V4H6v16h5.5l-.4 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm15.7 12.3 1 1a1 1 0 0 1 0 1.4L17 22.4l-3.2.8.8-3.2 5.7-5.7a1 1 0 0 1 1.4 0z"/></svg></div>
+            <div class="gt" id="genT">공문 초안 생성 중...</div><div class="gs" id="genS">1. 가. 1) 규격 및 띄어쓰기 규정을 적용하고 있습니다</div></div></div>
+      </div>
+      <div class="lint" id="lintBox" aria-live="polite"></div>
+    </div>
+    <div class="dock">
+      <span><b>관련: (날짜)호.</b> 필수</span><span>· 1과 2 사이 빈 줄 없음</span><span>· 가. 2타 / 1) 4타 들여쓰기</span><span>· 쌍점(:) 앞 붙임·뒤 띄움</span>
+      <span>· 붙임 2번 줄 맞춤 & 2타 띄우고 '끝.'</span>
+      <span class="tip">본문 일부를 마우스로 선택한 뒤 채팅으로 요청하면 그 부분만 고쳐요.</span>
+    </div>
+  </section>
+</div>
+
+<!-- rules modal -->
+<div class="scrim" id="rulesModal" role="dialog" aria-modal="true" aria-labelledby="rulesTitle">
+  <div class="modal" style="width:min(760px,100%)">
+    <div class="mh"><h3 id="rulesTitle">공문 띄어쓰기·표기 규정</h3><p class="sub">행정안전부 공문서 작성 기준과 K-에듀파인 기안문 관례를 따라요. 표의 ∨는 띄어쓰기 한 칸(1타)이에요.</p></div>
+    <div class="mb">
+      <table class="rtable">
+        <tr><th>항목</th><th>규정</th><th>예시</th></tr>
+        <tr><td>항목 기호</td><td>1. → 가. → 1) → 가) → (1) → (가) 순서. 하위 항목은 2타씩 들여 쓰고, 기호 뒤는 1타 띄움. 항목이 하나면 기호 생략</td><td><code>2.∨○○○<br>∨∨가.∨○○<br>∨∨∨∨1)∨○○</code></td></tr>
+        <tr><td>관련 문서</td><td>첫 항목에 쓰고 생산 기관·번호(날짜) 뒤에 '호.'를 붙임. 1과 2 사이에 빈 줄을 두지 않음</td><td><code>1.∨관련:∨광주경신여자고등학교-1234(2026.∨3.∨2.)호.</code></td></tr>
+        <tr><td>날짜</td><td>연·월·일 글자 대신 마침표, 요일은 괄호</td><td><code>2026.∨10.∨28.(수)</code></td></tr>
+        <tr><td>시간</td><td>24시각제, 시·분 글자 대신 쌍점</td><td><code>15:30~17:30</code></td></tr>
+        <tr><td>물결표</td><td>앞뒤 말에 붙여 씀</td><td><code>2026.∨4.∨1.~4.∨30.</code></td></tr>
+        <tr><td>쌍점</td><td>앞말에 붙이고 뒷말과 1타 띄움</td><td><code>장소:∨본교∨시청각실</code></td></tr>
+        <tr><td>금액</td><td>숫자 뒤 괄호 안에 한글로 함께 적음</td><td><code>금217,800원(금이십일만칠천팔백원)</code></td></tr>
+        <tr><td>붙임</td><td>본문 끝에서 한 줄 띄우고 '붙임∨∨'. 첨부가 여럿이면 번호를 붙이고 둘째 줄부터 첫째 번호와 줄을 맞춤</td><td><code>붙임∨∨1.∨추진∨계획∨1부.<br><span id="attPad">∨∨∨∨∨∨∨∨∨</span>2.∨명단∨1부.∨∨끝.</code></td></tr>
+        <tr><td>끝 표시</td><td>마지막 글자에서 2타 띄우고 '끝.' (붙임이 있으면 붙임 뒤)</td><td><code>…바랍니다.∨∨끝.</code></td></tr>
+      </table>
+      <div class="field" style="margin-top:14px"><span style="font-size:12.5px;font-weight:700;color:var(--ink-2)">학교 관례 설정</span>
+        <label class="chk"><input type="checkbox" id="optHo" checked>관련 문서 끝에 '호.' 붙이기</label>
+        <label class="chk">붙임 둘째 줄 앞 공백 <input class="txt" id="optPad" type="number" min="0" max="20" value="9" style="width:70px;height:30px;padding:0 8px">칸 <span class="opt">K-에듀파인 편집기 기준 9칸, 고정폭 글꼴 기준 6칸</span></label>
+        <label class="chk">관련 문서 기본 기관명 <input class="txt" id="optOrg" value="광주경신여자고등학교" style="flex:1;height:30px;padding:0 8px"></label>
+      </div>
+    </div>
+    <div class="mf"><span class="grow"></span><button class="btn primary" id="rulesClose">확인</button></div>
+  </div>
+</div>
+
+<!-- AI modal -->
+<div class="scrim" id="aiModal" role="dialog" aria-modal="true" aria-labelledby="aiTitle">
+  <div class="modal" style="width:min(560px,100%)">
+    <div class="mh"><h3 id="aiTitle">AI 설정 (선택)</h3><p class="sub">구글 제미나이 API 키를 넣으면 초안 만들기와 채팅 수정을 AI가 해요. 키가 없어도 규칙에 따른 초안 만들기와 빠른 수정 버튼은 그대로 쓸 수 있어요.</p></div>
+    <div class="mb">
+      <div class="field"><label for="aiKey">Gemini API 키</label>
+        <div style="display:flex;gap:6px"><input class="txt" id="aiKey" type="password" autocomplete="off" spellcheck="false" placeholder="AQ. 또는 AIza로 시작하는 키" style="flex:1;min-width:0"><button class="btn" id="aiShow" type="button" style="height:40px">보기</button></div>
+        <span class="opt">키는 이 PC의 브라우저에만 저장돼요. 같은 주소(github.io)의 품목내역 도우미와 키를 함께 써요.</span></div>
+      <div class="field"><label for="aiModel">모델</label><input class="txt" id="aiModel" list="aiModels" autocomplete="off" spellcheck="false">
+        <datalist id="aiModels"><option value="gemini-flash-latest"><option value="gemini-flash-lite-latest"><option value="gemini-3.7-flash"></datalist></div>
+      <div class="note-box"><b>보내기 전에 확인하세요</b><br>AI를 쓰면 제목·메모·본문이 구글로 전송돼요. 결제를 연결하지 않은 무료 키는 보낸 내용이 구글 서비스 개선에 쓰이고 사람이 검토할 수 있어요. 개인정보는 넣지 말고, 업무 자료를 외부 AI로 보내도 되는지는 교육청 생성형 AI 지침을 확인하세요.</div>
+      <div class="aistatus" id="aiStatus" hidden></div>
+    </div>
+    <div class="mf"><button class="btn" id="aiClear" style="color:var(--seal)">키 지우기</button><span class="grow"></span><button class="btn" id="aiTest">연결 확인</button><button class="btn" id="aiCancel">취소</button><button class="btn primary" id="aiSave">저장</button></div>
+  </div>
+</div>
+
+<!-- confirm -->
+<div class="scrim" id="cfModal" role="dialog" aria-modal="true" aria-labelledby="cfTitle">
+  <div class="modal" style="width:min(420px,100%)"><div class="mh"><h3 id="cfTitle"></h3><p class="sub" id="cfText"></p></div>
+  <div class="mf" style="border:0;justify-content:flex-end"><button class="btn" id="cfNo">취소</button><button class="btn primary" id="cfYes">확인</button></div></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span id="toastMsg"></span><button id="toastAct">되돌리기</button></div>
+
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const clean=s=>String(s??"").replace(/[ \t ]+/g," ").trim();
+const fmt=n=>(Math.round(n)||0).toLocaleString("ko-KR");
+function hangulAmount(n){n=Math.floor(Math.abs(n));if(!n)return "영";const d=["","일","이","삼","사","오","육","칠","팔","구"],u=["","십","백","천"],big=["","만","억","조"];let out="",g=0;
+  while(n>0){const part=n%10000;n=Math.floor(n/10000);if(part){let s="",p=part;for(let i=0;i<4&&p;i++){const k=p%10;if(k)s=d[k]+u[i]+s;p=Math.floor(p/10);}out=s+big[g]+out;}g++;}return out;}
+const wonH=n=>`금${fmt(n)}원(금${hangulAmount(n)}원)`;
+function hasBatchim(w){w=clean(w).replace(/\s*\([^()]*\)\s*$/,"").replace(/[\s.,·'"’”\]]+$/,"");const c=w.slice(-1);if(!c)return false;const code=c.charCodeAt(0);
+  if(code>=0xAC00&&code<=0xD7A3)return (code-0xAC00)%28>0;if(/[0-9]/.test(c))return "013678".includes(c);return /[lmnrLMNR]/.test(c);}
+const eul=w=>w+(hasBatchim(w)?"을":"를");
+let toastT,toastUndo=null;
+function toast(t,undo){$("#toastMsg").textContent=t;toastUndo=undo||null;const el=$("#toast");el.classList.toggle("act",!!undo);el.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>{el.classList.remove("show");toastUndo=null;},undo?6000:2400);}
+$("#toastAct").onclick=()=>{if(toastUndo){toastUndo();toastUndo=null;$("#toast").classList.remove("show");}};
+let lastFocus=null;
+function openModal(id){lastFocus=document.activeElement;$(id).classList.add("open");setTimeout(()=>{const f=$(id).querySelector(".btn.primary");f&&f.focus();},30);}
+function closeModal(id){$(id).classList.remove("open");lastFocus&&lastFocus.focus&&lastFocus.focus();}
+document.querySelectorAll(".scrim").forEach(s=>s.addEventListener("mousedown",e=>{if(e.target===s)closeModal("#"+s.id);}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){const o=document.querySelector(".scrim.open");if(o)closeModal("#"+o.id);}});
+let cfCb=null;function ask(t,x,y,cb){$("#cfTitle").textContent=t;$("#cfText").textContent=x;$("#cfYes").textContent=y;cfCb=cb;openModal("#cfModal");}
+$("#cfYes").onclick=()=>{closeModal("#cfModal");const c=cfCb;cfCb=null;c&&c();};$("#cfNo").onclick=()=>closeModal("#cfModal");
+
+/* ---------- 설정 ---------- */
+const LS_OPT="gongmun_opts_v1",LS_DRAFT="gongmun_draft_v1",LS_AI="edufine_gemini_v1";
+const lsGet=k=>{try{return JSON.parse(localStorage.getItem(k)||"null");}catch(e){return null;}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true;}catch(e){return false;}};
+let OPT=Object.assign({ho:true,pad:9,org:"광주경신여자고등학교"},lsGet(LS_OPT)||{});
+function saveOpt(){OPT={ho:$("#optHo").checked,pad:Math.max(0,Math.min(20,+$("#optPad").value||0)),org:clean($("#optOrg").value)||"광주경신여자고등학교"};lsSet(LS_OPT,OPT);$("#attPad").textContent="∨".repeat(OPT.pad);lintDoc();}
+["#optHo","#optPad","#optOrg"].forEach(s=>$(s).addEventListener("input",saveOpt));
+$("#rulesBtn").onclick=()=>{$("#optHo").checked=OPT.ho;$("#optPad").value=OPT.pad;$("#optOrg").value=OPT.org;$("#attPad").textContent="∨".repeat(OPT.pad);openModal("#rulesModal");};
+$("#rulesClose").onclick=()=>closeModal("#rulesModal");
+
+/* ---------- 모드 ---------- */
+let mode="general";
+const MODE={
+  general:{tag:"일반 공문",desc:"일반 행정 공문 (1. 관련: 호. / 가. / 1) / 붙임 및 끝.)",lblT:"공문 제목",lblM:"본문 대략적인 내용",gen:"공문 서식(1. 가. 1)으로 초안 만들기",
+    hint:"'일시: …', '장소: …'처럼 적으면 가. 나. 항목이 되고, 그 아래 '- …'로 적으면 1) 2) 하위 항목이 돼요. '관련:', '붙임:'도 알아서 넣어요.",
+    ph:"예) 교직원 응급처치 역량 강화를 위해 심폐소생술 교육을 실시하오니 전 교직원은 참석 바람.\n관련: 광주경신여자고등학교-1025(2026.3.2)\n일시: 2026. 4. 15.(수) 15:30~17:30\n장소: 본교 시청각실\n붙임: 추진 계획 1부"},
+  expense:{tag:"지출품의",desc:"어떤 사업으로 사려는지 목적, 구입품목(○○ 외 ○종), 예산, 구매처, 견적서 붙임",lblT:"품의 제목 (행사·사업 및 물품 구입)",lblM:"품의 내용 메모 (사업 목적, 구입품목 외 ○종, 총액·예산, 구매처)",gen:"지출품의 공문(구입품목·예산·구매처) 초안 만들기",
+    hint:"'구입품목:', '구입예산:', '구매처:', '붙임:'을 적으면 그대로 정리해요. 금액은 한글 금액이 자동으로 붙어요.",
+    ph:"예) 2026학년도 과학 동아리 운영에 필요한 실험 물품을 구입하고자 함.\n관련: 광주경신여자고등학교-4641(2026.4.6)\n구입품목: 비커 세트 외 12종\n구입예산: 217,800원\n구매처: 학교장터(S2B)\n붙임: 지출품의서 1부, 견적서 1부"}
+};
+const EXAMPLE={
+  general:{title:"2026학년도 교직원 심폐소생술 연수 실시 안내",memo:"교직원의 응급처치 및 안전 역량 강화를 위해 심폐소생술 등 응급처치 교육을 실시하오니 전 교직원은 참석 바람.\n관련: 광주경신여자고등학교-1025(2026.3.2)\n일시: 2026년 4월 15일 수요일 15시 30분 ~ 17시 30분\n장소: 본교 시청각실\n대상: 전 교직원\n교육 내용:\n- 이론 교육(40분): 응급처치의 목적 및 필요성, 심폐소생술 원리 교육\n- 실습 교육(80분): 심폐소생술 모의 실습 및 자동심장충격기(AED) 사용법\n준비물: 실습을 위한 간편한 복장\n붙임: 2026학년도 교직원 심폐소생술 연수 추진 계획 1부, 연수 참석자 명단 서식 1부"},
+  expense:{title:"2026학년도 과학 동아리 실험 물품 구입",memo:"2026학년도 과학 동아리 운영에 필요한 실험 물품을 구입하고자 함.\n관련: 광주경신여자고등학교-4641(2026.4.6)\n구입품목: 비커 세트 외 12종\n구입예산: 217,800원\n구매처: 학교장터(S2B)\n붙임: 지출품의서 1부, 견적서 1부"}
+};
+function setMode(m,silent){mode=m;const M=MODE[m];
+  document.querySelectorAll(".seg button").forEach(b=>{const on=b.dataset.m===m;b.classList.toggle("on",on);b.setAttribute("aria-checked",String(on));});
+  $("#modeTag").textContent=M.tag;$("#modeTag").classList.toggle("ex",m==="expense");$("#modeDesc").textContent=M.desc;
+  $("#lblTitle").textContent=M.lblT;$("#lblMemo").innerHTML=esc(M.lblM)+' <span class="opt">메모처럼 자유롭게</span>';$("#genLabel").textContent=M.gen;$("#memoHint").textContent=M.hint;$("#inMemo").placeholder=M.ph;
+  if(!silent)autosave();}
+document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+
+/* ---------- 표기 정리 도구 ---------- */
+function fmtDateParts(y,m,d,w){return `${y}. ${+m}. ${+d}.`+(w?`(${w})`:"");}
+function to24(ap,h){h=+h;if(ap==="오후"&&h<12)h+=12;if(ap==="오전"&&h===12)h=0;return h;}
+function normInline(t){ // 날짜·시간·물결표·쌍점 정리 (한 줄)
+  return t
+   .replace(/(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일(?:\s*\(?([월화수목금토일])요일\)?)?/g,(m,y,mo,d,w)=>fmtDateParts(y,mo,d,w))
+   .replace(/\b(\d{4})\s*[-/]\s*(\d{1,2})\s*[-/]\s*(\d{1,2})\b\.?/g,(m,y,mo,d)=>fmtDateParts(y,mo,d))
+   .replace(/\b(\d{4})\.\s?(\d{1,2})\.\s?(\d{1,2})(?![\d.])/g,(m,y,mo,d)=>fmtDateParts(y,mo,d))
+   .replace(/\(([월화수목금토일])요일\)/g,"($1)")
+   .replace(/(오전|오후)?\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?\s*[~∼\-–]\s*(오전|오후)?\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?/g,(m,a1,h1,m1,a2,h2,m2)=>{let x=to24(a1||"",h1),y=to24(a2||a1||"",h2);if(!a2&&a1==="오후"&&y<x)y+=12;const f=(h,mi)=>`${String(h%24).padStart(2,"0")}:${String(mi||0).padStart(2,"0")}`;return (m.match(/^\s*/)[0])+f(x,m1)+"~"+f(y,m2);})
+   .replace(/(오전|오후)\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?/g,(m,a,h,mi)=>`${String(to24(a,h)).padStart(2,"0")}:${String(mi||0).padStart(2,"0")}`)
+   .replace(/(\d{1,2})\s*시\s*(\d{1,2})\s*분/g,(m,h,mi)=>`${h.padStart(2,"0")}:${mi.padStart(2,"0")}`)
+   .replace(/\b(\d):(\d{2})\b/g,"0$1:$2")
+   .replace(/(\d{2}:\d{2})\s*[-–]\s*(\d{1,2}:\d{2})/g,"$1~$2")
+   .replace(/\s*[~∼]\s*/g,"~")
+   .replace(/(?<=[^\d\s]) +:/g,":").replace(/(?<=[가-힣a-zA-Z)]):(?=[^\s\d/])/g,": ");
+}
+function fmtRel(t){ // "광주경신여자고등학교-1025(2026.3.2)" → "…-1025(2026. 3. 2.)호."
+  t=clean(t).replace(/^관련\s*[:：]?\s*/,"").replace(/[.。]+$/,"").replace(/\s*호$/,"");
+  t=normInline(t).replace(/\s*\(\s*/g,"(").replace(/\s*\)/g,")");
+  if(/^\d+\s*\(/.test(t)||/^\d+$/.test(t))t=`${OPT.org}-${t}`;
+  t=t.replace(/(\d{4}\.\s\d{1,2}\.\s\d{1,2}\.)(?:\([월화수목금토일]\))?/,"$1");
+  return t+(OPT.ho?"호.":".");
+}
+function formalize(s){ // 메모 말투 → 공문 문장
+  s=clean(String(s).replace(/\p{Extended_Pictographic}\uFE0F?/gu,"")).replace(/\s*\.\s*$/,"");
+  if(!s)return s;
+  s=s.replace(/(참석|제출|협조|회신|참여|신청|확인|협력|참고|활용|안내|지도|준수|응시|등록)\s*(바람|요망|부탁드림|부탁드립니다|해\s*주세요|하세요|해주시기 바랍니다)$/,"$1하여 주시기 바랍니다")
+       .replace(/(하여|해)\s*주시기\s*바람$/,"하여 주시기 바랍니다").replace(/\s*(바람|요망)$/," 바랍니다")
+       .replace(/하고자\s*함$/,"하고자 합니다").replace(/하고자\s*한다$/,"하고자 합니다").replace(/할\s*예정(임)?$/,"할 예정입니다").replace(/예정(임)?$/,"예정입니다")
+       .replace(/([가-힣])함$/,"$1합니다").replace(/([가-힣])됨$/,"$1됩니다").replace(/([가-힣])임$/,"$1입니다").replace(/할\s*것$/,"하시기 바랍니다")
+       .replace(/해\s*주세요$/,"하여 주시기 바랍니다").replace(/하세요$/,"하시기 바랍니다").replace(/합시다$/,"하고자 합니다")
+       .replace(/([가-힣])하니\s+(?!,)/,"$1하오니, ").replace(/하오니\s+(?!,)/,"하오니, ").replace(/하오니,\s*,/,"하오니,");
+  if(!/[다요]$/.test(s))s+=" 합니다".replace(/^ /,"");
+  return s+".";
+}
+function addDaum(s){ // 항목이 있으면 '다음과 같이'
+  if(/다음과\s*같이|아래와\s*같이/.test(s))return s;
+  return s.replace(/(을|를)\s+(실시|개최|운영|추진|안내|구입|구매|제출|시행|진행|모집|신청|요청|지출|보고|알려|공지)/,"$1 다음과 같이 $2");
+}
+function titleCore(t){return clean(t).replace(/\s*(실시\s*)?(안내|알림|공지|계획|협조\s*요청|요청|보고|개최)$/,"").replace(/\s*실시$/,"");}
+
+/* ---------- 제목 → 기본 개요(메모) ---------- */
+const BL="○○";
+function outlineFromTitle(title,m){
+  const t=clean(title);if(!t)return "";
+  const Y=(t.match(/(20\d{2})\s*학년도/)||t.match(/(20\d{2})/)||[,String(new Date().getFullYear())])[1];
+  const D=`${Y}. ○. ○.(○)`,DT=`${D} ○○:○○~○○:○○`,has=re=>re.test(t);
+  const core=(titleCore(t)||t).replace(/(\s*(공고|계획|알림|안내|개최|실시|운영|추진|시행|진행))+$/,"")||t;
+  const L=[];const sent=x=>L.push(x),kv=(k,v)=>L.push(`${k}: ${v}`),sub=a=>a.forEach(x=>L.push("- "+x)),att=a=>L.push("붙임: "+a.map(x=>x+" 1부").join(", "));
+  if(m==="expense"||has(/구입|구매|지출|물품|기자재|비품|교구/)){
+    const g=core.replace(/\s*(구입|구매)(\s*품의)?$/,"");
+    sent(`${eul(g||"물품")} 다음과 같이 구입하고자 함.`);
+    kv("구입품목",`${BL} 외 ○종`);kv("구입예산","○○○,○○○원");kv("구매처",`학교장터(S2B)`);att(["지출품의서","견적서"]);
+  }else if(has(/결과/)){
+    sent(`${core.replace(/\s*결과(\s*보고)?$/,"")} 결과를 다음과 같이 보고함.`);
+    kv("기간",`${D}~○. ○.(○)`);kv("대상",BL);kv("주요 결과","");sub([BL,BL]);att(["결과 보고서"]);
+  }else if(has(/연수|교육(?!과정)|강의|특강|워크숍/)){
+    sent(`${eul(core)} 다음과 같이 실시하오니 대상자는 참석 바람.`);
+    kv("일시",DT);kv("장소",`본교 ${BL}실`);kv("대상",BL);kv("강사",BL);kv("내용","");sub([`${BL}(○○분): ${BL}`,`${BL}(○○분): ${BL}`]);kv("준비물",BL);att([`${core} 계획`]);
+  }else if(has(/회의|협의회|위원회|협의|간담회/)){
+    sent(`${eul(core)} 다음과 같이 개최하오니 참석 바람.`);
+    kv("일시",DT);kv("장소",`본교 ${BL}실`);kv("참석 대상",BL);kv("안건","");sub([`${BL}`,`${BL}`]);att(["회의 자료"]);
+  }else if(has(/체험학습|현장학습|수학여행|견학|수련활동|답사/)){
+    sent(`${eul(core)} 다음과 같이 실시하오니 협조 바람.`);
+    kv("일시",DT);kv("장소",BL);kv("대상",`○학년 ○○명`);kv("인솔 교사",BL);kv("이동 방법",BL);kv("준비물",BL);att([`${core} 계획`,"안전교육 자료"]);
+  }else if(has(/대회|행사|축제|체육대회|발표회|경연|공연|캠프|박람회|설명회|입학식|졸업식|시상/)){
+    sent(`${eul(core)} 다음과 같이 개최하고자 함.`);
+    kv("일시",DT);kv("장소",BL);kv("대상",BL);kv("내용","");sub([BL,BL]);kv("시상",BL);att([`${core} 계획`]);
+  }else if(has(/모집|공모|신청|추천|선발|채용|공고|접수/)){
+    sent(`${eul(core.replace(/\s*(모집|공모|신청|추천|선발|채용|공고|접수)$/,"")||core)} 다음과 같이 ${(t.match(/모집|공모|추천|선발|채용|접수/)||["모집"])[0]}하오니 희망자는 신청 바람.`);
+    kv("대상",BL);kv("인원","○명");kv("신청 기간",`${Y}. ○. ○.(○)~○. ○.(○)`);kv("신청 방법",BL);kv("선정 방법",BL);att(["신청서"]);
+  }else if(has(/조사|설문|제출|회신|현황|수요/)){
+    sent(`${eul(core)} 다음과 같이 실시하오니 기한 내 제출 바람.`);
+    kv("제출 대상",BL);kv("제출 기한",`${D}까지`);kv("제출 방법",BL);kv("담당자",BL);att(["조사 서식"]);
+  }else if(has(/상담|주간|기간/)){
+    sent(`${eul(core)} 다음과 같이 운영하고자 함.`);
+    kv("기간",`${D}~○. ○.(○)`);kv("대상",BL);kv("방법",BL);kv("내용",BL);
+  }else if(has(/협조|요청/)){
+    sent(`${core.replace(/\s*(협조\s*)?요청$/,"")}과 관련하여 다음과 같이 협조를 요청하오니 협조 바람.`.replace(/([가-힣])과 관련/,(a,c)=>c+((c.charCodeAt(0)-0xAC00)%28?"과":"와")+" 관련"));
+    kv("일시",DT);kv("대상",BL);kv("협조 사항",BL);
+  }else if(has(/계획|운영/)){
+    sent(`${eul(core)} 다음과 같이 운영하고자 함.`);
+    kv("목적",BL);kv("기간",`${D}~○. ○.(○)`);kv("대상",BL);kv("운영 내용","");sub([BL,BL]);att([`${core} 계획`]);
+  }else{
+    sent(`${eul(core)} 다음과 같이 ${/안내|알림|공지/.test(t)?"안내함":"실시하고자 함"}.`);
+    kv("일시",DT);kv("장소",BL);kv("대상",BL);kv("내용",BL);
+  }
+  return L.join("\n");
+}
+const OUTLINE_PROMPT=(t)=>`당신은 학교 공문 작성 도우미입니다. 학교: ${OPT.org}. 작성 모드: ${MODE[mode].tag}.
+공문 제목 "${t}"에 맞는 '본문 대략적인 내용' 메모를 써 주세요. 규칙:
+- 첫 줄은 목적·취지 한 문장(메모 말투, 예: "…을 다음과 같이 실시하고자 함.").
+- 이어서 "항목: 값" 형식 줄 4~7개(일시, 장소, 대상, 내용 등 제목에 맞게). 세부 내용은 "- "로 시작.
+- 마지막 줄은 필요하면 "붙임: ○○ 1부".
+- 날짜·시간·장소·인원·금액 등 제목에 없는 사실은 절대 지어내지 말고 ○ 로 비워 둘 것 (예: 2026. ○. ○.(○) ○○:○○~○○:○○).
+JSON으로만 답하세요: {"title":"","body":"메모 전체(줄바꿈은 \\n)","note":""}`;
+
+/* ---------- 메모 → 구조 ---------- */
+const KEY_RE=/^([가-힣A-Za-z][가-힣A-Za-z0-9 ·()]{0,14}?)\s*[:：]\s*(.*)$/;
+function parseMemo(memo){
+  const lines=memo.replace(/\r/g,"").split("\n");
+  const res={rel:"",sent:[],items:[],att:[]};let cur=null,inAtt=false;
+  for(let raw of lines){
+    const ln=raw.trim();if(!ln){cur=null;inAtt=false;continue;}
+    const bullet=ln.match(/^(?:[-•·▪*∙ㆍ]|\d{1,2}[).]|\(\d{1,2}\)|[①-⑳]|[가-힣][).])\s*(.+)$/);
+    const kv=!bullet&&ln.match(KEY_RE);
+    if(kv&&/^(관련|관련\s*문서|관련\s*공문)$/.test(clean(kv[1]))){res.rel=kv[2];cur=null;inAtt=false;continue;}
+    if(kv&&/^(붙임|첨부|붙임\s*서류|첨부\s*서류|첨부\s*파일)$/.test(clean(kv[1]))){inAtt=true;cur=null;res.att.push(...kv[2].split(/\s*[,，]\s*|\s*\/\s*/).filter(Boolean));continue;}
+    if(/^붙\s*임\s+\S/.test(ln)&&!kv){inAtt=true;res.att.push(...ln.replace(/^붙\s*임\s*/,"").split(/\s*[,，]\s*/).filter(Boolean));continue;}
+    if(bullet&&inAtt){res.att.push(bullet[1]);continue;}
+    if(bullet&&cur){cur.children.push(bullet[1]);continue;}
+    if(kv&&kv[1].length<=15&&!/[.。]$/.test(kv[1])){cur={key:clean(kv[1]),val:clean(kv[2]),children:[]};res.items.push(cur);inAtt=false;continue;}
+    if(bullet){res.items.push({key:"",val:bullet[1],children:[]});cur=null;continue;}
+    res.sent.push(ln);cur=null;
+  }
+  res.att=res.att.map(a=>clean(a).replace(/[.。]+$/,"")).filter(Boolean).map(a=>/\d+\s*(부|매|장|권|식|건|개|철|점|종)$/.test(a)?a:a+" 1부");
+  return res;
+}
+const KO="가나다라마바사아자차카타파하거너더러머버서어저처커터퍼허고노도로모보소오조초코토포호구누두루무부수우주추쿠투푸후";
+const KOC="["+KO+"]";
+function moneyVal(v){const m=String(v).match(/(\d[\d,]*)\s*원/);return m?+m[1].replace(/,/g,""):NaN;}
+function fmtValue(key,v){
+  v=normInline(clean(String(v).replace(/\p{Extended_Pictographic}\uFE0F?/gu,"")));
+  if(/예산|총액|금액|사업비|소요액|합계|경비/.test(key)&&!/\(금/.test(v)){const n=moneyVal(v)||+String(v).replace(/[^\d]/g,"");if(n)v=v.replace(/금?\s*\d[\d,]*\s*원?/,wonH(n));}
+  return v;
+}
+function buildDraft(title,memo){
+  const P=parseMemo(memo);const out=[];let n=1;
+  if(clean(P.rel)){out.push(`${n}. 관련: ${fmtRel(P.rel)}`);n++;}
+  if(!P.sent.length&&P.items.length&&!P.items[0].key&&!P.items[0].children.length&&/(다|함|바람|요망|임|됨)\.?$/.test(P.items[0].val))P.sent.push(P.items.shift().val);
+  const nounVerb=t=>{const m=clean(t).replace(/[.。]$/,"").match(/^(.+?)\s*(개최|실시|운영|추진|안내|구입|구매|모집|시행|진행|점검|조사|신청)$/);
+    return m?`${eul(m[1])} ${P.items.length?"다음과 같이 ":""}${m[2]}하고자 합니다.`:null;};
+  let sent=P.sent.map(t=>nounVerb(t)||formalize(t)).join(" ");
+  if(mode==="expense"){
+    const items=P.items.slice();
+    const take=re=>{const i=items.findIndex(x=>re.test(x.key));return i>=0?items.splice(i,1)[0]:null;};
+    const goods=take(/^(구입\s*품목|구매\s*품목|품목|품명|물품|구입\s*물품)$/),budget=take(/(예산|총액|금액|사업비)$/),shop=take(/^(구매처|구입처|구 매 처|구 입 처|업체|구매\s*업체)$/),purpose=take(/^(목적|사업\s*목적|사업명|구입\s*목적)$/);
+    if(!sent){const core=clean(title)||"물품";sent=purpose?`${eul(purpose.val)} 위하여 다음과 같이 물품을 구입하고자 합니다.`:`${eul(core.replace(/\s*(구입|구매)$/,""))} 다음과 같이 구입하고자 합니다.`;}
+    else sent=addDaum(sent);
+    out.push(`${n}. ${sent}`);
+    const subs=[];
+    if(goods)subs.push(`구입품목: ${fmtValue("품목",goods.val)}`);
+    if(budget)subs.push(`구입예산: ${fmtValue("예산",budget.val)}`);
+    if(shop)subs.push(`구 매 처: ${fmtValue("구매처",shop.val)}`);
+    const rest=items.map(x=>({...x}));
+    let k=0;
+    if(subs.length){out.push(`  ${KO[k++]}. 내용`);subs.forEach((s,i)=>out.push(`    ${i+1}) ${s}`));}
+    rest.forEach(x=>{pushItem(out,x,KO[k++]);});
+  }else{
+    if(!sent){const core=titleCore(title);sent=core?`${eul(core)} 다음과 같이 ${/안내|알림|공지/.test(title)?"안내합니다":"실시하고자 합니다"}.`:"다음과 같이 알려 드립니다.";}
+    else if(P.items.length)sent=addDaum(sent);
+    out.push(`${n}. ${sent}`);
+    if(P.items.length===1&&!P.items[0].children.length){const x=P.items[0];out.push(`  ${x.key?x.key+": ":""}${fmtValue(x.key,x.val)}`);}
+    else P.items.forEach((x,i)=>pushItem(out,x,KO[i]));
+  }
+  let body=out.join("\n").replace(/\s+$/,"");
+  if(!P.att.length)body=body.replace(/([^.)])$/,"$1.").replace(/\)$/,").");
+  if(P.att.length){
+    body+="\n\n붙임  "+(P.att.length===1?`${P.att[0]}.`:P.att.map((a,i)=>(i?" ".repeat(OPT.pad):"")+`${i+1}. ${a}.`).join("\n"));
+  }
+  return body+"  끝.";
+}
+function pushItem(out,x,sym){
+  if(x.children.length){
+    out.push(`  ${sym}. ${x.key||x.val}${x.key&&x.val?": "+fmtValue(x.key,x.val):""}`);
+    x.children.forEach((c,j)=>out.push(`    ${j+1}) ${normInline(clean(c))}`));
+  }else out.push(`  ${sym}. ${x.key?x.key+": ":""}${fmtValue(x.key,x.val)}`);
+}
+
+/* ---------- 규정 정돈 (번호·들여쓰기·빈 줄·끝 표시까지 다시 맞춤) ---------- */
+const LV=[[/^(\d{1,2})\.(?![\d.])/,0,"n."],[new RegExp("^("+KOC+")\\.(?!\\.)"),1,"k."],[/^(\d{1,2})\)/,2,"n)"],[new RegExp("^("+KOC+")\\)"),3,"k)"],[/^\((\d{1,2})\)/,4,"(n)"],[new RegExp("^\\(("+KOC+")\\)"),5,"(k)"]];
+const symOf=(type,i)=>({"n.":`${i+1}.`,"k.":`${KO[i]}.`,"n)":`${i+1})`,"k)":`${KO[i]})`,"(n)":`(${i+1})`,"(k)":`(${KO[i]})`}[type]);
+function tidyDoc(x){
+  x=String(x||"").replace(/\r/g,"").replace(/[ \t]+$/gm,"");
+  // 끝·붙임 분리
+  let lines=x.split("\n");let att=[],body=[],inAtt=false;
+  for(const l of lines){const t=l.trim();
+    if(/^붙\s*임(?![가-힣])/.test(t)){inAtt=true;const r=t.replace(/^붙\s*임\s*[:：]?\s*/,"");if(r)att.push(r);continue;}
+    if(inAtt){if(t)att.push(t);continue;}
+    body.push(l);}
+  // 본문: 줄마다 기호 수준 판정 후 번호 다시 매기기
+  const counters=[0,0,0,0,0,0];const outB=[];let prevBlank=false;
+  body=body.map(l=>l.replace(/\s*끝\.?\s*$/,"")).filter((l,i,a)=>!(i===a.length-1&&!l.trim()));
+  for(const l of body){
+    const t=l.trim();if(!t){prevBlank=true;continue;}
+    const hit=LV.find(([re])=>re.test(t));
+    if(hit){const [re,lv,type]=hit;const rest=t.replace(re,"").trim();counters[lv]++;for(let j=lv+1;j<counters.length;j++)counters[j]=0;
+      outB.push(" ".repeat(lv*2)+symOf(type,counters[lv]-1)+" "+normInline(rest));}
+    else{ // 기호 없는 줄: 바로 위 항목의 연속 문장으로 붙이거나 그대로
+      const lead=(l.match(/^\s*/)[0]).length;
+      if(outB.length&&!prevBlank&&lead===0&&!/[.:)]$/.test(outB[outB.length-1].trim())&&!/^\S+\s*:/.test(t))outB[outB.length-1]+=" "+normInline(t);
+      else outB.push((lead?" ".repeat(Math.round(lead/2)*2):"")+normInline(t));
+    }
+    prevBlank=false;
+  }
+  // 관련 '호.'
+  for(let i=0;i<outB.length;i++){const m=outB[i].match(/^(\s*\d{1,2}\.\s)관련\s*[:：]\s*(.+)$/);if(m)outB[i]=m[1]+"관련: "+fmtRel(m[2]);}
+  // 금액 한글 병기
+  for(let i=0;i<outB.length;i++)outB[i]=outB[i].replace(/((?:총\s*액|총\s*금액|소요\s*예산|구입\s*예산|예산|합\s*계|금\s*액|사업비)\s*:\s*)(금\s*)?(\d[\d,]*)\s*원(?!\s*\()/g,(m,p,g,n)=>p+wonH(+n.replace(/,/g,"")));
+  let out=outB.join("\n").replace(/\s+$/,"");
+  att=att.flatMap(a=>a.split(/\s*[,，]\s*/)).map(a=>clean(a).replace(/^\d{1,2}\.\s*/,"").replace(/\s*끝\.?\s*$/,"").replace(/[.。]+$/,"")).filter(Boolean).map(a=>/\d+\s*(부|매|장|권|식|건|개|철|점|종)$/.test(a)?a:a+" 1부");
+  if(!att.length)out=out.replace(/([^.)\s])$/,"$1.").replace(/\)$/,").");
+  if(att.length)out+="\n\n붙임  "+(att.length===1?`${att[0]}.`:att.map((a,i)=>(i?" ".repeat(OPT.pad):"")+`${i+1}. ${a}.`).join("\n"));
+  return out+"  끝.";
+}
+
+/* ---------- 규정 점검: 빨간 표시 + 교정 추천 ---------- */
+function allMatches(re,x,fn){const out=[];re.lastIndex=0;let m;while((m=re.exec(x))){const r=fn(m);if(r)out.push(r);if(m[0].length===0)re.lastIndex++;}return out;}
+const SYMLV=[[/^\d{1,2}\.\s/,0],[new RegExp("^"+KOC+"\\.\\s"),1],[/^\d{1,2}\)\s/,2],[new RegExp("^"+KOC+"\\)\\s"),3],[/^\(\d{1,2}\)\s/,4],[new RegExp("^\\("+KOC+"\\)\\s"),5]];
+const RULES=[
+ {id:"date",name:"날짜 표기",why:"연·월·일 글자 대신 마침표를 찍어요 (2026. 10. 28.)",find:x=>[
+   ...allMatches(/(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일(?:\s*\(?([월화수목금토일])요일\)?)?/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:fmtDateParts(m[1],m[2],m[3],m[4])})),
+   ...allMatches(/\b(\d{4})\s*[-/]\s*(\d{1,2})\s*[-/]\s*(\d{1,2})\b\.?/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:fmtDateParts(m[1],m[2],m[3])})),
+   ...allMatches(/\b(\d{4})\.\s?(\d{1,2})\.\s?(\d{1,2})(?![\d.])/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:fmtDateParts(m[1],m[2],m[3])})),
+   ...allMatches(/\(([월화수목금토일])요일\)/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:`(${m[1]})`}))]},
+ {id:"time",name:"시간 표기",why:"24시각제로 시·분 글자 없이 쌍점을 써요 (15:30)",find:x=>[
+   ...allMatches(/(오전|오후)?\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?\s*[~∼\-–]\s*(오전|오후)?\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?/g,x,m=>{const st=m.index+(m[0].length-m[0].trimStart().length);return {s:st,e:m.index+m[0].length,fix:normInline(m[0]).trim()};}),
+   ...allMatches(/(\d{1,2}:\d{2})\s*[-–]\s*(\d{1,2}:\d{2})/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:normInline(m[0])})),
+   ...allMatches(/(오전|오후)\s*(\d{1,2})\s*시(?:\s*(\d{1,2})\s*분)?/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:normInline(m[0])})),
+   ...allMatches(/(?<![오전후]\s?)(\d{1,2})\s*시\s*(\d{1,2})\s*분/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:`${m[1].padStart(2,"0")}:${m[2].padStart(2,"0")}`})),
+   ...allMatches(/(?<![오전후\d]\s?)(\d{1,2})\s*시(?=$|[\s~∼\-–)\],.]|부터|까지|에|경|정각)(?!\s*\d{1,2}\s*분)/gm,x,m=>({s:m.index,e:m.index+m[0].length,fix:`${m[1].padStart(2,"0")}:00`}))]},
+ {id:"tilde",name:"물결표",why:"물결표(~)는 앞뒤 말에 붙여 써요",find:x=>allMatches(/[ \t]+[~∼][ \t]*|[ \t]*[~∼][ \t]+|∼/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:"~"}))},
+ {id:"colon",name:"쌍점",why:"쌍점(:)은 앞말에 붙이고 뒷말과 한 칸 띄워요",find:x=>[
+   ...allMatches(/(?<=[^\d\s]) +:/g,x,m=>({s:m.index,e:m.index+m[0].length,fix:":"})),
+   ...allMatches(/(?<=[가-힣a-zA-Z)]):(?=[^\s\d/])/g,x,m=>({s:m.index,e:m.index+1,fix:": "}))]},
+ {id:"rel",name:"관련 문서",why:"관련 문서는 번호(날짜) 뒤에 '호.'로 맺어요",find:x=>OPT.ho?allMatches(/^(\s*\d{1,2}\.\s*관련\s*:\s*)([^\n]*?)\s*(호\s*\.?|\.)?[ \t]*$/gm,x,m=>{if(/호\.$/.test(m[0].trim()))return null;const st=m.index+m[1].length;return {s:st,e:m.index+m[0].length,fix:fmtRel(m[2])};}):[]},
+ {id:"gap12",name:"빈 줄",why:"1과 2 사이처럼 항목 사이에는 빈 줄을 두지 않아요",find:x=>allMatches(/(?<=^\s*\d{1,2}\.[^\n]*)\n(?:[ \t]*\n)+(?=[ \t]*(?:\d{1,2}\.|[가-힣]\.|\d{1,2}\))\s)/gm,x,m=>({s:m.index,e:m.index+m[0].length,fix:"\n"}))},
+ {id:"money",name:"금액 표기",why:"금액은 숫자 뒤 괄호 안에 한글로 함께 적어요",find:x=>[
+   ...allMatches(/((?:총\s*액|총\s*금액|소요\s*예산|구입\s*예산|예산|합\s*계|금\s*액|사업비)\s*:\s*)(금\s*)?(\d[\d,]*)\s*원(?!\s*\()/g,x,m=>{const v=+m[3].replace(/,/g,"");if(!v)return null;return {s:m.index+m[1].length,e:m.index+m[0].length,fix:wonH(v)};}),
+   ...allMatches(/(=\s*)(금\s*)?(\d[\d,]*)\s*원(?!\s*\()/g,x,m=>{const v=+m[3].replace(/,/g,"");if(!v)return null;return {s:m.index+m[1].length,e:m.index+m[0].length,fix:wonH(v)};})]},
+ {id:"sym",name:"항목 기호 띄어쓰기",why:"항목 기호 다음은 한 칸(1타) 띄워요",find:x=>allMatches(/^([ \t]*)(\d{1,2}\.|[가-힣]\.|\d{1,2}\)|[가-힣]\)|\(\d{1,2}\)|\([가-힣]\))(?=[^\s\d.])/gm,x,m=>{const p=m.index+m[1].length+m[2].length;return {s:p,e:p,fix:" "};})},
+ {id:"indent",name:"들여쓰기",why:"하위 항목은 상위 항목보다 2타 들여 써요 (가. 2타 / 1) 4타)",find:x=>{
+   const out=[];let off=0,hasTop=false,inAtt=false;
+   for(const line of x.split("\n")){const lead=line.match(/^[ \t]*/)[0],body=line.slice(lead.length);
+     if(/^붙\s*임/.test(body))inAtt=true;else if(!line.trim())inAtt=false;
+     if(!inAtt){const lv=(SYMLV.find(([re])=>re.test(body))||[])[1];if(lv===0&&!lead.length)hasTop=true;
+       if(lv!=null&&(hasTop||lv===0)){const want=" ".repeat(lv*2);if(lead.replace(/\t/g,"  ")!==want)out.push({s:off,e:off+lead.length,fix:want,show:body.slice(0,8)});}}
+     off+=line.length+1;}
+   return out;}},
+ {id:"attach",name:"붙임 표기",why:"'붙임'은 붙여 쓰고 쌍점 없이 2타 띄워 첨부물을 적어요",find:x=>[
+   ...allMatches(/^붙\s+임/gm,x,m=>({s:m.index,e:m.index+m[0].length,fix:"붙임"})),
+   ...allMatches(/^(붙임)(\s*:\s*|\s(?!\s)|(?=\S))(?=\S)/gm,x,m=>({s:m.index+m[1].length,e:m.index+m[0].length,fix:"  "}))]},
+ {id:"attpad",name:"붙임 줄 맞춤",why:"붙임 둘째 줄은 첫째 번호와 줄을 맞춰요",find:x=>{
+   const out=[];const ls=x.split("\n");let off=0,inAtt=false;
+   for(const l of ls){if(/^붙임\s{1,}\d{1,2}\.\s/.test(l))inAtt=true;
+     else if(inAtt&&/^\s*\d{1,2}\.\s/.test(l)){const lead=l.match(/^\s*/)[0];if(lead.length!==OPT.pad)out.push({s:off,e:off+lead.length,fix:" ".repeat(OPT.pad),show:l.trim().slice(0,8)});}
+     else if(!l.trim())inAtt=false;
+     off+=l.length+1;}
+   return out;}},
+ {id:"end",name:"끝 표시",why:"마지막 글자에서 2타 띄우고 '끝.'을 써요",find:x=>{
+   const t=x.replace(/\s+$/,"");if(!t)return [];
+   const m=t.match(/(\S?)([ \t]*)끝\s*\.?$/);
+   if(m){const ok=/\S  끝\.$/.test(t)&&/[.)]$/.test(t.slice(0,t.length-4).replace(/\s+$/,""));if(ok&&x===t)return [];
+     const st=t.length-m[0].length+m[1].length;const before=t.slice(0,st);return [{s:st,e:x.length,fix:(/[.]$/.test(before)?"":".")+"  끝."}];}
+   const last=t.match(/(\S+)$/);const st=t.length-last[1].length;return [{s:st,e:x.length,fix:last[1].replace(/([^.])$/,"$1.")+"  끝."}];}},
+];
+function lintIssues(x){let list=[];RULES.forEach(r=>{let f=[];try{f=r.find(x)||[];}catch(e){}f.forEach(i=>{if(x.slice(i.s,i.e)!==i.fix)list.push({...i,rule:r});});});
+  list.sort((a,b)=>a.s-b.s||b.e-a.e);const out=[];let last=-1;for(const i of list){if(i.s>=last){out.push(i);last=Math.max(last,i.e);}}return out;}
+const applyFix=(x,i)=>x.slice(0,i.s)+i.fix+x.slice(i.e);
+function fixAll(x){for(let n=0;n<6;n++){const is=lintIssues(x);if(!is.length)break;for(const i of is.slice().sort((a,b)=>b.s-a.s))x=applyFix(x,i);}return x;}
+const showTxt=t=>t.replace(/ /g,"∨").replace(/\n/g,"↵");
+function dispIssue(x,i){
+  if(i.rule.id==="indent"||i.rule.id==="attpad"){const n=i.e-i.s,m=i.fix.length;return {b:`${"∨".repeat(n)}${i.show}`,a:`${"∨".repeat(m)}${i.show}`,note:`앞 공백 ${n}칸 → ${m}칸`};}
+  if(i.rule.id==="gap12")return {b:"빈 줄",a:"(없앰)"};
+  if(i.rule.id==="end"){const ls=x.lastIndexOf("\n",i.s-1)+1;const ws=Math.max(ls,i.s-8);return {b:x.slice(ws,i.e).replace(/\s+$/,""),a:x.slice(ws,i.s)+i.fix};}
+  const seg=x.slice(i.s,i.e);if(seg.trim().length>=2)return {b:seg,a:i.fix};
+  const ls=x.lastIndexOf("\n",i.s-1)+1,le=(x.indexOf("\n",i.e)+1||x.length+1)-1;const ws=Math.max(ls,i.s-4),we=Math.min(le,i.e+4);
+  return {b:x.slice(ws,we),a:x.slice(ws,i.s)+i.fix+x.slice(i.e,we)};
+}
+let curIssues=[],aiMark=null;
+const ta=$("#docBody"),hl=$("#docHl");
+function renderHl(){
+  const x=ta.value;let h="",p=0;const marks=curIssues.map((i,k)=>({...i,k}));
+  marks.forEach(i=>{h+=esc(x.slice(p,i.s));h+=i.s===i.e?`<mark class="zero" data-k="${i.k}"></mark>`:`<mark data-k="${i.k}">${esc(x.slice(i.s,i.e))}</mark>`;p=i.e;});
+  h+=esc(x.slice(p))+"\n";hl.innerHTML=h;syncHl();
+  $("#emptyDoc").hidden=!!x.trim();
+}
+function syncHl(){hl.scrollTop=ta.scrollTop;const sb=ta.offsetWidth-ta.clientWidth-2;hl.style.paddingRight=`calc(10px + ${Math.max(0,sb)}px)`;}
+function lintDoc(){
+  const x=ta.value,box=$("#lintBox");curIssues=x.trim()?lintIssues(x):[];renderHl();
+  if(!x.trim()){box.className="lint";box.innerHTML="";return [];}
+  if(!curIssues.length){box.className="lint ok";box.textContent="✓ 공문 작성 규정에 맞아요";return [];}
+  box.className="lint warn";
+  box.innerHTML=`<div class="lint-h"><b>교정 추천 ${curIssues.length}건</b><span class="opt">∨는 띄어쓰기 한 칸이에요. 추천을 누르면 위치를 보여 줘요.</span><span class="grow"></span><button class="btn" id="lintFix" type="button">모두 고치기</button></div>`+
+    curIssues.slice(0,8).map((i,k)=>{const d=dispIssue(x,i);return `<div class="sug" data-k="${k}"><span class="why">${esc(i.rule.name)} · ${esc(i.rule.why)}</span><span class="fix" title="본문에서 위치 보기"><del>${esc(showTxt(d.b))}</del><span class="arrow">→</span><ins>${esc(showTxt(d.a))}</ins>${d.note?`<span class="note">${esc(d.note)}</span>`:""}</span><button class="btn apply" type="button" data-k="${k}">적용</button></div>`;}).join("")+
+    (curIssues.length>8?`<div class="more">외 ${curIssues.length-8}건은 [모두 고치기]로 함께 고쳐요.</div>`:"");
+  return curIssues;
+}
+function snapshotDoc(){const t=$("#docTitle").value,b=ta.value;return ()=>{$("#docTitle").value=t;ta.value=b;lintDoc();autosave();toast("되돌렸어요");};}
+function setBody(y,msg,undo){ta.value=y;lintDoc();autosave();if(msg)toast(msg,undo);}
+$("#lintBox").addEventListener("click",e=>{
+  if(e.target.id==="lintFix"){const u=snapshotDoc();setBody(fixAll(ta.value),"규정에 맞게 모두 고쳤어요",u);return;}
+  const ap=e.target.closest(".apply");if(ap){const i=curIssues[+ap.dataset.k];if(i){const u=snapshotDoc();setBody(applyFix(ta.value,i),"추천대로 고쳤어요",u);}return;}
+  const sg=e.target.closest(".sug");if(sg){const i=curIssues[+sg.dataset.k];if(!i)return;ta.focus();ta.setSelectionRange(i.s,Math.max(i.e,i.s));
+    hl.querySelectorAll("mark").forEach(m=>m.classList.toggle("on",m.dataset.k===sg.dataset.k));
+    const lh=parseFloat(getComputedStyle(ta).lineHeight)||26;const ln=ta.value.slice(0,i.s).split("\n").length-1;ta.scrollTop=Math.max(0,ln*lh-ta.clientHeight/2);syncHl();}
+});
+ta.addEventListener("input",()=>{lintDoc();autosave();});
+ta.addEventListener("scroll",syncHl);
+if(window.ResizeObserver)new ResizeObserver(()=>syncHl()).observe(ta);
+$("#docTitle").addEventListener("input",autosave);
+function tidyNow(){if(!ta.value.trim()){toast("정돈할 본문이 없어요.");return;}const u=snapshotDoc();setBody(fixAll(tidyDoc(ta.value)),"번호·들여쓰기·표기를 규정대로 정돈했어요",u);}
+$("#tidyBtn").onclick=tidyNow;
+
+/* ---------- 선택 영역 ---------- */
+let sel=null;
+function updateSel(){const s=ta.selectionStart,e=ta.selectionEnd;
+  if(document.activeElement===ta&&e>s&&ta.value.slice(s,e).trim()){sel={s,e,text:ta.value.slice(s,e)};$("#selNote").hidden=false;$("#selText").textContent="“"+sel.text.replace(/\s+/g," ").slice(0,60)+"”";}
+}
+["mouseup","keyup","select"].forEach(ev=>ta.addEventListener(ev,updateSel));
+$("#selClear").onclick=()=>{sel=null;$("#selNote").hidden=true;};
+
+/* ---------- 작성 중 화면 ---------- */
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));let busyN=0;
+function busy(on,t,sub){const sd=$(".sheetdoc");
+  if(on){busyN++;$("#genT").textContent=t||"공문 초안 생성 중...";$("#genS").textContent=sub||"1. 가. 1) 규격 및 띄어쓰기 규정을 적용하고 있습니다";
+    let bg="";if(!ta.value.trim()){try{const ex=EXAMPLE[mode];bg=fixAll(buildDraft(ex.title,ex.memo));}catch(e){}}
+    const ed=$(".sheetdoc>.ed"),g=$("#genBg");g.textContent=bg;if(ed){g.style.top=(ed.offsetTop+9)+"px";g.style.left=(ed.offsetLeft+11)+"px";g.style.right=(ed.offsetLeft+11)+"px";}sd.classList.add("busy");sd.setAttribute("aria-busy","true");
+    ["#genBtn","#chatSend","#tidyBtn","#outlineBtn"].forEach(q=>{const b=$(q);if(b)b.disabled=true;});ta.readOnly=true;$("#docTitle").readOnly=true;}
+  else{busyN=Math.max(0,busyN-1);if(busyN)return;sd.classList.remove("busy");sd.removeAttribute("aria-busy");$("#genBg").textContent="";
+    ["#genBtn","#chatSend","#tidyBtn","#outlineBtn"].forEach(q=>{const b=$(q);if(b)b.disabled=false;});ta.readOnly=false;$("#docTitle").readOnly=false;}}
+
+/* ---------- 초안 만들기 ---------- */
+$("#genBtn").onclick=async()=>{
+  const title=clean($("#inTitle").value),memo=$("#inMemo").value.trim();
+  if(!title&&!memo){toast("제목이나 메모를 먼저 적어 주세요.");$("#inTitle").focus();return;}
+  const u=snapshotDoc();
+  if($(".sheetdoc").classList.contains("busy"))return;
+  busy(true,(mode==="expense"?"지출품의 ":"")+"공문 초안 생성 중...");
+  try{await genInner(title,memo,u);}finally{busy(false);}
+};
+async function genInner(title,memo,u){
+  if(aiOn()){
+    chat("me",`[초안 만들기] ${MODE[mode].tag} · ${title||"(제목 없음)"}`);
+    const w=chat("bot","AI가 공문 규정에 맞춰 초안을 쓰는 중이에요…","wait");
+    try{const r=await aiDraft(title,memo);w.remove();
+      $("#docTitle").value=r.title||title;setBody(fixAll(tidyDoc(r.body)),null,null);
+      chat("bot",`초안을 만들었어요. 규정 정돈까지 마쳤어요.${r.note?"\n"+r.note:""}\n채팅으로 더 고칠 내용을 말해 주세요.`);toast("AI 초안을 만들었어요",u);return;}
+    catch(e){w.remove();chat("bot",`AI 초안에 실패해서 규칙에 따라 만들었어요. (${e.message})`,"err");}
+  }
+  if(!aiOn())await sleep(650);
+  $("#docTitle").value=title;
+  setBody(fixAll(buildDraft(title,memo)),null,null);
+  chat("bot",mode==="expense"?"지출품의 초안을 만들었어요. 구입품목·예산(한글 금액)·구매처와 붙임을 정리했어요.":"공문 초안을 만들었어요. 관련(호.)·항목(가. / 1))·붙임 줄 맞춤·끝 표시를 규정대로 넣었어요.");
+  toast("초안을 만들었어요",u);
+}
+async function fillOutline(auto){
+  const t=clean($("#inTitle").value);if(!t){if(!auto){toast("공문 제목을 먼저 적어 주세요.");$("#inTitle").focus();}return;}
+  const prev=$("#inMemo").value;
+  const put=(x,how)=>{$("#inMemo").value=x;autosave();toast(`${how} ○ 칸을 채운 뒤 [초안 만들기]를 누르세요.`,()=>{$("#inMemo").value=prev;autosave();});};
+  if(aiOn()&&!auto){const b=$("#outlineBtn");b.disabled=true;const old=b.lastChild.textContent;b.lastChild.textContent="AI가 개요 쓰는 중…";
+    try{const r=await aiCall(OUTLINE_PROMPT(t));put(r.body.trim(),"AI가 제목에 맞는 개요를 넣었어요.");return;}
+    catch(e){toast("AI 개요에 실패해서 기본 개요를 넣었어요. ("+e.message+")");}
+    finally{b.disabled=false;b.lastChild.textContent=old;}}
+  put(outlineFromTitle(t,mode),"제목에 맞는 기본 개요를 넣었어요.");
+}
+$("#outlineBtn").onclick=()=>{if($("#inMemo").value.trim())ask("개요로 바꿀까요?","지금 메모 칸의 내용을 제목에 맞는 기본 개요로 바꿉니다. (바꾼 뒤 되돌리기 가능)","바꾸기",()=>fillOutline(false));else fillOutline(false);};
+{let tv0="";const canAuto=()=>!$("#inMemo").value.trim()&&clean($("#inTitle").value).length>=4;
+ $("#inTitle").addEventListener("focus",()=>{tv0=$("#inTitle").value;});
+ $("#inTitle").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.isComposing){e.preventDefault();if(canAuto())fillOutline(true);$("#inMemo").focus();}});
+ // 메모 칸으로 바로 옮겨 직접 쓰려는 경우는 건드리지 않음
+ $("#inTitle").addEventListener("blur",e=>{if($("#inTitle").value!==tv0&&e.relatedTarget!==$("#inMemo")&&canAuto())fillOutline(true);});}
+$("#fillEx").onclick=()=>{const ex=EXAMPLE[mode];$("#inTitle").value=ex.title;$("#inMemo").value=ex.memo;autosave();toast("예시를 채웠어요. [초안 만들기]를 눌러 보세요.");};
+$("#clearAll").onclick=()=>ask("모두 지울까요?","제목, 메모, 본문, 채팅 기록이 지워져요. 지운 뒤에도 잠시 동안 되돌릴 수 있어요.","모두 지우기",()=>{
+  const s={t:$("#inTitle").value,m:$("#inMemo").value,dt:$("#docTitle").value,b:ta.value,log:$("#chatLog").innerHTML};
+  $("#inTitle").value="";$("#inMemo").value="";$("#docTitle").value="";setBody("",null);$("#chatLog").innerHTML="";welcome();
+  toast("모두 지웠어요",()=>{$("#inTitle").value=s.t;$("#inMemo").value=s.m;$("#docTitle").value=s.dt;ta.value=s.b;$("#chatLog").innerHTML=s.log;lintDoc();autosave();});
+});
+
+/* ---------- 복사 ---------- */
+async function copyText(t,label){if(!t.trim()){toast("복사할 내용이 없어요.");return;}
+  let ok=false;try{await navigator.clipboard.writeText(t);ok=true;}catch(e){}
+  if(!ok){const tmp=document.createElement("textarea");tmp.value=t;document.body.appendChild(tmp);tmp.select();try{ok=document.execCommand("copy");}catch(e){}tmp.remove();}
+  toast(ok?`${label}을(를) 복사했어요. K-에듀파인에 붙여넣으세요.`:"복사하지 못했어요. 본문을 선택해 Ctrl+C로 복사하세요.");}
+$("#copyBody").onclick=$("#copyBodyTop").onclick=()=>{const nb=(ta.value.match(/○+/g)||[]).length;const w=nb?`아직 채우지 않은 ○ 칸이 ${nb}곳 있어요.`:curIssues.length?`교정 추천 ${curIssues.length}건이 남아 있어요. 확인 후 붙여넣으세요.`:"";if(w)toast(w);setTimeout(()=>copyText(ta.value,"본문"),w?900:0);};
+$("#copyTitle").onclick=()=>copyText($("#docTitle").value,"제목");
+
+/* ---------- 채팅 ---------- */
+function chat(who,text,cls){const d=document.createElement("div");d.className=`msg ${who}${cls?" "+cls:""}`;d.textContent=text;$("#chatLog").appendChild(d);$("#chatLog").scrollTop=1e9;saveLogSoon();return d;}
+function welcome(){chat("bot",aiOn()?"AI가 켜져 있어요. 초안을 만든 뒤 '일시를 4월 16일로 바꿔 줘', '마지막 문장을 정중하게'처럼 말해 보세요.":"아래 빠른 버튼은 AI 키 없이도 동작해요. '붙임에 회의록 추가', '제목을 ○○로 바꿔'처럼 간단한 요청도 알아들어요. 자유로운 문장 수정은 [AI 설정]에서 키를 넣으면 돼요.");}
+let pending=null; // 빠른 버튼 입력 대기
+function askInline(kind,ph,cb){pending={kind,cb};const i=$("#chatIn");i.placeholder=ph;i.value="";i.focus();chat("bot",ph.replace(/\s*\(Enter\)$/,""));}
+function resetInput(){pending=null;$("#chatIn").placeholder="공문에서 고치고 싶은 내용을 말해 주세요 (Enter)";}
+function lines(){return ta.value.split("\n");}
+function addRel(v){
+  let L=lines();const relLine=`1. 관련: ${fmtRel(v)}`;
+  const idx=L.findIndex(l=>/^\s*\d{1,2}\.\s*관련\s*:/.test(l));
+  if(idx>=0)L[idx]=relLine;else L=[relLine,...L];
+  return tidyDoc(L.join("\n"));
+}
+function addAtt(v){
+  const items=v.split(/\s*[,，]\s*/).filter(Boolean);
+  return tidyDoc(ta.value.replace(/\s*끝\.?\s*$/,"")+(/(^|\n)붙\s*임/.test(ta.value)?"\n":"\n\n붙임  ")+items.join("\n"));
+}
+function addSub(v){ // 커서가 있는 가. 항목(없으면 마지막 가.) 아래에 1) 추가
+  const L=lines();const cur=ta.value.slice(0,ta.selectionStart).split("\n").length-1;
+  let k=-1;for(let i=Math.min(cur,L.length-1);i>=0;i--){if(/^\s*[가-힣]\.\s/.test(L[i])){k=i;break;}}
+  if(k<0)for(let i=L.length-1;i>=0;i--){if(/^\s*[가-힣]\.\s/.test(L[i])){k=i;break;}}
+  if(k<0)return null;
+  let end=k+1;while(end<L.length&&/^\s{4,}\S/.test(L[end]))end++;
+  L.splice(end,0,`    1) ${v}`);return tidyDoc(L.join("\n"));
+}
+function formalAll(x){return x.split("\n").map(l=>{const m=l.match(/^(\s*(?:\d{1,2}\.|[가-힣]\.|\d{1,2}\)|[가-힣]\))?\s*)(.+)$/);if(!m)return l;const body=m[2];
+  if(/[.]$/.test(body)||/(바람|요망|함|됨|임|할 것|해 주세요|하세요)$/.test(body)){if(/:\s/.test(body)&&!/(바람|요망|함|됨|임)$/.test(body))return l;return m[1]+formalize(body.replace(/\s*끝\.?$/,""));}return l;}).join("\n");}
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
+  const k=c.dataset.c;if(!ta.value.trim()&&k!=="rel"){toast("먼저 초안을 만들거나 본문을 적어 주세요.");return;}
+  if(k==="tidy"){chat("me","규정 정돈");tidyNow();chat("bot","번호를 다시 매기고, 들여쓰기·날짜·시간·금액·붙임·끝 표시를 규정대로 정돈했어요.");return;}
+  if(k==="rel"){askInline("rel",`관련 공문을 입력하세요. 예: ${OPT.org}-1234(2026. 3. 2.) (Enter)`);return;}
+  if(k==="att"){askInline("att","붙일 서류 이름을 입력하세요. 여러 개는 쉼표로 구분해요. 예: 회의록, 참석자 명단 (Enter)");return;}
+  if(k==="sub"){askInline("sub","추가할 1) 하위항목 내용을 입력하세요. 커서가 있는 가. 항목 아래에 들어가요. (Enter)");return;}
+  if(k==="formal"){chat("me","더 격식있게");if(aiOn()){runAI("문장을 공문에 맞게 더 격식 있고 간결하게 다듬어 주세요. 항목 구조와 사실(날짜·금액·장소)은 바꾸지 마세요.");return;}
+    const u=snapshotDoc();setBody(fixAll(tidyDoc(formalAll(ta.value))),"공문 말투로 다듬었어요",u);chat("bot","'~바람', '~함' 같은 메모 말투를 '~바랍니다', '~합니다'로 바꿨어요. 더 자연스러운 문장은 AI 키를 넣으면 다듬어 드려요.");}
+});
+function quickCommand(t){ // AI 없이 알아듣는 간단한 요청
+  let m;
+  if((m=t.match(/^제목(?:을|은)?\s*[“"']?(.+?)[”"']?\s*(?:으로|로)\s*(?:바꿔|변경|수정)/))){$("#docTitle").value=clean(m[1]);autosave();return "제목을 바꿨어요.";}
+  if((m=t.match(/붙임(?:에|으로)?\s*(.+?)\s*(?:을|를)?\s*(?:추가|넣어)/))){const u=snapshotDoc();setBody(fixAll(addAtt(m[1])),"붙임을 추가했어요",u);return `붙임에 '${m[1]}'을(를) 추가했어요.`;}
+  if((m=t.match(/관련(?:\s*공문|\s*문서)?(?:에|으로|을|를)?\s*(.+?)\s*(?:추가|넣어|으로 바꿔|로 바꿔)/))){const u=snapshotDoc();setBody(fixAll(addRel(m[1])),"관련 문서를 넣었어요",u);return "관련 문서를 1번 항목에 넣었어요.";}
+  if(/(규정|규칙).*(정돈|정리|맞춰)/.test(t)){tidyNow();return "규정대로 정돈했어요.";}
+  return null;
+}
+async function sendChat(){if($(".sheetdoc").classList.contains("busy")){toast("공문을 작성하는 중이에요. 잠시만 기다려 주세요.");return;}
+  const i=$("#chatIn");const t=clean(i.value);if(!t)return;i.value="";
+  chat("me",t);
+  if(pending){const p=pending;resetInput();const u=snapshotDoc();
+    if(p.kind==="rel"){setBody(fixAll(addRel(t)),"관련 문서를 넣었어요",u);chat("bot","관련 문서를 1번 항목에 넣고 번호를 다시 매겼어요. 끝에 '호.'를 붙였어요.");}
+    if(p.kind==="att"){setBody(fixAll(addAtt(t)),"붙임을 추가했어요",u);chat("bot","붙임에 추가하고 번호와 줄 맞춤, 끝 표시를 정리했어요.");}
+    if(p.kind==="sub"){const r=addSub(t);if(r==null){chat("bot","하위항목을 넣을 '가.' 항목이 없어요. 본문에 가. 항목을 먼저 만들어 주세요.","err");}else{setBody(fixAll(r),"하위항목을 추가했어요",u);chat("bot","1) 하위항목을 추가하고 번호를 다시 매겼어요.");}}
+    return;}
+  const q=quickCommand(t);if(q){chat("bot",q);return;}
+  if(!aiOn()){chat("bot","이 요청은 AI가 필요해요. [AI 설정]에서 제미나이 키를 넣으면 자유롭게 고칠 수 있어요. 키 없이 되는 요청: '제목을 ○○로 바꿔', '붙임에 ○○ 추가', '관련에 ○○ 추가', '규정 정돈'.","err");return;}
+  runAI(t);
+}
+$("#chatSend").onclick=sendChat;
+$("#chatIn").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.isComposing){e.preventDefault();sendChat();}if(e.key==="Escape"&&pending){resetInput();chat("bot","입력을 취소했어요.");}});
+
+/* ---------- AI (Gemini) ---------- */
+function aiCfg(){return Object.assign({key:"",model:"gemini-flash-latest"},lsGet(LS_AI)||{});}
+function aiOn(){return !!aiCfg().key;}
+function aiBadge(){const on=aiOn();$("#aiBadge").textContent=on?"켜짐":"꺼짐";$("#aiBadge").classList.toggle("on",on);$("#aiState").textContent=on?"AI 준비 완료":"AI 꺼짐 · 규칙 모드";$("#aiState").classList.toggle("on",on);}
+const AI_URL=m=>`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(m)}`;
+function aiErr(st,b){const msg=(b&&b.error&&b.error.message)||"";if(st===400&&/API key not valid|API_KEY_INVALID/i.test(msg))return "API 키가 올바르지 않아요";if(st===400)return "요청을 처리하지 못했어요"+(msg?`: ${msg.slice(0,80)}`:"");if(st===401||st===403)return "API 키 권한이 없어요";if(st===404)return "모델 이름을 찾을 수 없어요";if(st===429)return "사용 한도를 넘었어요. 잠시 뒤 다시 시도하세요";if(st>=500)return "구글 서버 오류예요";return `오류 ${st}`;}
+async function aiFetch(url,opt,ms){const ac=new AbortController();const t=setTimeout(()=>ac.abort(),ms||90000);try{return await fetch(url,{...opt,signal:ac.signal});}catch(e){throw new Error(e.name==="AbortError"?"응답이 너무 오래 걸려요":"인터넷에 연결할 수 없어요");}finally{clearTimeout(t);}}
+const RULE_PROMPT=()=>`당신은 대한민국 학교 행정실·교무실의 공문(기안문) 작성 전문가입니다. 학교: ${OPT.org}.
+K-에듀파인 기안문 '본문'만 씁니다(수신·발신 명의 제외). 반드시 지킬 규정:
+- 항목 기호는 1. → 가. → 1) → 가) → (1) 순서. 첫째 항목은 왼쪽 끝, 가.는 공백 2칸, 1)은 공백 4칸 들여쓰기. 기호 뒤 한 칸 띄움.
+- 관련 문서가 있으면 "1. 관련: 기관명-번호(2026. 3. 2.)${OPT.ho?"호.":"."}" 형식으로 첫 항목에 둠. 1과 2 사이에 빈 줄 없음.
+- 날짜 "2026. 4. 15.(수)", 시간 "15:30~17:30"(24시각제, 물결표 붙여 씀), 쌍점은 앞말에 붙이고 뒤는 한 칸 띄움.
+- 금액은 "금217,800원(금이십일만칠천팔백원)"처럼 한글 병기.
+- 문장은 공문 어투(~하고자 합니다, ~하여 주시기 바랍니다). 사실(날짜·금액·장소·인원)은 바꾸거나 지어내지 말 것.
+- 붙임은 본문 끝에서 한 줄 띄우고 "붙임  1. ○○ 1부." 형식, 둘째 줄부터 공백 ${OPT.pad}칸 뒤 "2. ○○ 1부.", 마지막에 공백 2칸 + "끝.". 붙임이 없으면 본문 마지막 문장 뒤 공백 2칸 + "끝.".
+${mode==="expense"?'- 지출품의: "2. ○○을 다음과 같이 구입하고자 합니다." 다음 "  가. 내용" 아래 "    1) 구입품목: ○○ 외 ○종", "    2) 구입예산: 금…원(금…원)", "    3) 구 매 처: ○○". 붙임에 지출품의서·견적서.':'- 일반 공문: 목적·취지 문장 뒤 "다음과 같이 …"로 가. 나. 항목(일시, 장소, 대상, 내용 등)을 정리.'}
+JSON으로만 답하세요: {"title":"제목","body":"본문 전체(줄바꿈은 \\n)","note":"사용자에게 한 줄 설명"}`;
+async function aiCall(prompt){
+  const c=aiCfg();const body={contents:[{role:"user",parts:[{text:prompt}]}],generationConfig:{responseMimeType:"application/json"}};
+  const H={"Content-Type":"application/json","x-goog-api-key":c.key};
+  let r=await aiFetch(AI_URL(c.model)+":generateContent",{method:"POST",headers:H,body:JSON.stringify(body)});let j=null;try{j=await r.json();}catch(e){}
+  if(!r.ok&&r.status===400&&!/API key/i.test((j&&j.error&&j.error.message)||"")){delete body.generationConfig;r=await aiFetch(AI_URL(c.model)+":generateContent",{method:"POST",headers:H,body:JSON.stringify(body)});j=null;try{j=await r.json();}catch(e){}}
+  if(!r.ok)throw new Error(aiErr(r.status,j));
+  const cand=j&&j.candidates&&j.candidates[0];const text=cand&&cand.content&&cand.content.parts?cand.content.parts.filter(p=>p.text&&!p.thought).map(p=>p.text).join(""):"";
+  if(!text)throw new Error(cand&&cand.finishReason==="SAFETY"?"AI가 이 요청을 처리하지 않았어요":"AI가 빈 답을 보냈어요");
+  let t=text.trim().replace(/^```(?:json)?\s*/i,"").replace(/```\s*$/,"");const a=t.indexOf("{"),b=t.lastIndexOf("}");if(a>=0&&b>a)t=t.slice(a,b+1);
+  let o;try{o=JSON.parse(t);}catch(e){throw new Error("AI 답을 해석하지 못했어요");}
+  if(!o||typeof o.body!=="string"||!o.body.trim())throw new Error("AI가 본문을 보내지 않았어요");
+  return {title:clean(o.title||""),body:String(o.body).replace(/\\n/g,"\n"),note:clean(o.note||"")};
+}
+function aiDraft(title,memo){return aiCall(`${RULE_PROMPT()}\n\n[작성 모드] ${MODE[mode].tag}\n[제목] ${title||"(없음 — 내용에 맞게 지어 주세요)"}\n[메모]\n${memo||"(없음)"}\n\n위 메모의 사실만 사용해 기안문 본문을 작성하세요.`);}
+async function runAI(instr){
+  const w=chat("bot",sel?"선택한 부분을 고치는 중이에요…":"AI가 공문을 고치는 중이에요…","wait");
+  const u=snapshotDoc();const sl=sel;
+  busy(true,sl?"선택한 부분 수정 중...":"공문 수정 중...","요청 내용을 반영하고 1. 가. 1) 규정을 다시 적용하고 있습니다");
+  try{
+    const r=await aiCall(`${RULE_PROMPT()}\n\n[현재 제목] ${$("#docTitle").value}\n[현재 본문]\n${ta.value}\n\n${sl?`[수정할 부분] 아래 부분만 고치고 나머지는 그대로 두세요:\n<<<${sl.text}>>>\n\n`:""}[요청] ${instr}\n\n고친 결과 전체를 같은 JSON 형식으로 답하세요.`);
+    w.remove();if(r.title)$("#docTitle").value=r.title;
+    setBody(fixAll(tidyDoc(r.body)),"AI가 고쳤어요",u);sel=null;$("#selNote").hidden=true;
+    chat("bot",(r.note||"요청대로 고쳤어요.")+" 규정 정돈도 마쳤어요.");
+  }catch(e){w.remove();chat("bot",`AI 수정에 실패했어요. (${e.message})`,"err");}
+  finally{busy(false);}
+}
+$("#aiBtn").onclick=()=>{const c=aiCfg();$("#aiKey").value=c.key;$("#aiKey").type="password";$("#aiShow").textContent="보기";$("#aiModel").value=c.model||"gemini-flash-latest";$("#aiStatus").hidden=true;openModal("#aiModal");};
+$("#aiShow").onclick=()=>{const k=$("#aiKey");k.type=k.type==="password"?"text":"password";$("#aiShow").textContent=k.type==="password"?"보기":"숨기기";};
+$("#aiCancel").onclick=()=>closeModal("#aiModal");
+const aiForm=()=>({...aiCfg(),key:$("#aiKey").value.replace(/\s+/g,""),model:clean($("#aiModel").value)||"gemini-flash-latest"});
+function aiStatus(k,m){const el=$("#aiStatus");el.hidden=!m;el.className="aistatus "+(k||"");el.textContent=m||"";}
+$("#aiSave").onclick=()=>{const c=aiForm();if(c.key&&c.key.length<20){aiStatus("err","API 키가 너무 짧아요. 복사할 때 잘리지 않았는지 확인하세요.");return;}
+  if(!lsSet(LS_AI,c)){aiStatus("err","이 브라우저에서는 설정을 저장할 수 없어요.");return;}aiBadge();closeModal("#aiModal");toast(c.key?"AI를 켰어요":"AI 없이 규칙 모드로 써요");};
+$("#aiClear").onclick=()=>{try{localStorage.removeItem(LS_AI);}catch(e){}$("#aiKey").value="";aiBadge();aiStatus("ok","이 PC에서 API 키를 지웠어요.");};
+$("#aiTest").onclick=async()=>{const c=aiForm();if(!c.key){aiStatus("err","먼저 API 키를 넣어 주세요.");return;}aiStatus("wait","연결을 확인하는 중…");
+  try{const r=await aiFetch(AI_URL(c.model),{headers:{"x-goog-api-key":c.key}},20000);let j=null;try{j=await r.json();}catch(e){}r.ok?aiStatus("ok",`연결됐어요. 모델: ${(j&&j.displayName)||c.model}`):aiStatus("err",aiErr(r.status,j));}
+  catch(e){aiStatus("err",e.message+". 업무망 PC라면 외부 인터넷이 막혀 있을 수 있어요.");}};
+
+/* ---------- 저장 ---------- */
+let saveT,booted=false,logT;
+function autosave(){if(!booted)return;clearTimeout(saveT);saveT=setTimeout(saveNow,400);}
+function saveNow(){clearTimeout(saveT);lsSet(LS_DRAFT,{mode,t:$("#inTitle").value,m:$("#inMemo").value,dt:$("#docTitle").value,b:ta.value,log:[...$("#chatLog").children].slice(-30).map(d=>[d.className,d.textContent])});}
+function saveLogSoon(){clearTimeout(logT);logT=setTimeout(()=>booted&&saveNow(),500);}
+["#inTitle","#inMemo"].forEach(s=>$(s).addEventListener("input",autosave));
+window.addEventListener("pagehide",saveNow);
+const d=lsGet(LS_DRAFT);
+setMode(d&&d.mode==="expense"?"expense":"general",true);
+if(d){$("#inTitle").value=d.t||"";$("#inMemo").value=d.m||"";$("#docTitle").value=d.dt||"";ta.value=d.b||"";
+  (d.log||[]).forEach(([c,t])=>{const el=document.createElement("div");el.className=c.replace(/\bwait\b/,"");el.textContent=t;$("#chatLog").appendChild(el);});}
+if(!$("#chatLog").children.length)welcome();
+aiBadge();lintDoc();booted=true;
+window.__gm={outlineFromTitle,buildDraft,tidyDoc,lintIssues,fixAll,parseMemo,formalize,setMode};
+})();
+</script>
+</body>
+</html>
